@@ -14,24 +14,23 @@ const Cells = (): JSX.Element => {
   return (
     <ul className="flex flex-col gap-4">
       <li>
-        <InsertCell prevCellId={null} />
+        <InsertCell prevCellId={null} alwaysVisible={cells.length === 0} />
       </li>
-      {cells.map(({ id, type }) => (
+      {cells.map(({ id, type, content }) => (
         <motion.li
           key={id}
           className="flex flex-col gap-4"
           layout
           initial={{ opacity: 0, scaleY: 0 }}
-          animate={{
-            opacity: 1,
-            scaleY: 1,
-            transformOrigin: 'top',
-            transition: { type: 'tween' },
-          }}
+          animate={{ opacity: 1, scaleY: 1 }}
         >
-          <article className="overflow-hidden rounded-lg">
+          <article className="overflow-hidden rounded-lg shadow-md">
             <header className="h-12 bg-primary-light transition-colors dark:bg-primary-dark" />
-            {type === 'code' ? <CodeCell /> : <MarkdownCell />}
+            {type === 'code' ? (
+              <CodeCell cellId={id} content={content} />
+            ) : (
+              <MarkdownCell />
+            )}
           </article>
           <InsertCell prevCellId={id} />
         </motion.li>

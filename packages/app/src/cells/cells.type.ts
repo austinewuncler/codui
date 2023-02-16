@@ -10,3 +10,8 @@ export interface InsertCellPayload {
   prevCellId: EntityId | null;
   type: CellType;
 }
+
+export interface UpdateCellContentPayload {
+  cellId: EntityId;
+  content: string;
+}
