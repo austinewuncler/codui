@@ -45,6 +45,7 @@ const CodeCell = ({ cellId, content }: Props): JSX.Element => {
           value={content}
           extensions={[javascript({ jsx: true })]}
           onChange={handleChange}
+          basicSetup={{ foldGutter: false }}
         />
       </Resizable>
       <div className="flex-auto bg-slate-light p-4 transition-colors dark:bg-slate-dark">
