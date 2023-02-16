@@ -13,5 +13,16 @@ export interface InsertCellPayload {
 
 export interface UpdateCellContentPayload {
   cellId: EntityId;
-  content: string;
+  content?: string;
+}
+
+export type CellAction =
+  | 'formatCellContent'
+  | 'moveCellUp'
+  | 'moveCellDown'
+  | 'deleteCell';
+
+export interface MoveCellPayload {
+  cellId: EntityId;
+  direction: 'up' | 'down';
 }

@@ -12,7 +12,10 @@ module.exports = {
       accent: '#FFB804',
       secondary: '#FF3404',
     },
-    fontFamily: { cursive: ['Dr Sugiyama', 'cursive'] },
+    fontFamily: {
+      cursive: ['Dr Sugiyama', 'cursive'],
+      mono: ['Fira Code', 'monospace'],
+    },
     transitionDuration: { DEFAULT: '300ms' },
   },
 };

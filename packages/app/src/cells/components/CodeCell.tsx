@@ -1,5 +1,6 @@
 import { javascript } from '@codemirror/lang-javascript';
 import type { EntityId } from '@reduxjs/toolkit';
+import { xcodeDark, xcodeLight } from '@uiw/codemirror-theme-xcode';
 import CodeEditor from '@uiw/react-codemirror';
 import { Resizable } from 're-resizable';
 import React, { useCallback } from 'react';
@@ -39,7 +40,7 @@ const CodeCell = ({ cellId, content }: Props): JSX.Element => {
       >
         <CodeEditor
           className="h-full"
-          theme={isDarkTheme ? 'dark' : 'light'}
+          theme={isDarkTheme ? xcodeDark : xcodeLight}
           height="100%"
           value={content}
           extensions={[javascript({ jsx: true })]}

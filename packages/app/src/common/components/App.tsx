@@ -4,6 +4,7 @@ import { Cells } from '~/cells/components';
 
 import { DarkThemeProvider, StoreProvider } from '../providers';
 import DarkThemeToggle from './DarkThemeToggle';
+import Logo from './Logo';
 
 const App = (): JSX.Element => (
   <DarkThemeProvider>
@@ -11,9 +12,7 @@ const App = (): JSX.Element => (
       <StoreProvider>
         <header className="sticky inset-x-0 top-0">
           <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-0">
-            <button type="button" className="font-cursive text-6xl">
-              co<span className="text-primary">&lt;&#124;</span>ui
-            </button>
+            <Logo />
             <DarkThemeToggle />
           </div>
         </header>

@@ -32,7 +32,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.20.13, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.9.2":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -161,10 +161,12 @@ __metadata:
     "@codui/tsconfig": "workspace:^"
     "@heroicons/react": ^2.0.15
     "@reduxjs/toolkit": ^1.9.2
+    "@types/prettier": ^2.7.2
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
+    "@uiw/codemirror-theme-xcode": ^4.19.9
     "@uiw/react-codemirror": ^4.19.9
     "@vitejs/plugin-react-swc": ^3.1.0
     autoprefixer: ^10.4.13
@@ -186,7 +188,8 @@ __metadata:
     react-dom: ^18.2.0
     react-redux: ^8.0.5
     tailwind-scrollbar: ^2.1.0
-    tailwindcss: ^3.2.6
+    tailwindcss: ^3.2.7
+    tiny-invariant: ^1.3.1
     typescript: ^4.9.5
     usehooks-ts: ^2.9.1
     vite: ^4.1.1
@@ -1284,6 +1287,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/prettier@npm:^2.7.2":
+  version: 2.7.2
+  resolution: "@types/prettier@npm:2.7.2"
+  checksum: b47d76a5252265f8d25dd2fe2a5a61dc43ba0e6a96ffdd00c594cb4fd74c1982c2e346497e3472805d97915407a09423804cc2110a0b8e1b22cffcab246479b7
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.5
   resolution: "@types/prop-types@npm:15.7.5"
@@ -1473,6 +1483,30 @@ __metadata:
     "@codemirror/state": ">=6.0.0"
     "@codemirror/view": ">=6.0.0"
   checksum: f248d1623f33b88b61dd75955441d1b5925b2b2c78d595eac1d4603dc31f107d5973d9cff42c3ade4a2493828d679a8908e5dad03a570511e6095d0028089f85
+  languageName: node
+  linkType: hard
+
+"@uiw/codemirror-theme-xcode@npm:^4.19.9":
+  version: 4.19.9
+  resolution: "@uiw/codemirror-theme-xcode@npm:4.19.9"
+  dependencies:
+    "@uiw/codemirror-themes": 4.19.9
+  checksum: afeb84d7173245eb49476b0419843e7eaca75e2fa541d15dd81137eb5a1309d1b20a8116c7bef35c70d9e9d1bc22e810e1a12a1f0ebb7e4fe2ec36c7014033d8
+  languageName: node
+  linkType: hard
+
+"@uiw/codemirror-themes@npm:4.19.9":
+  version: 4.19.9
+  resolution: "@uiw/codemirror-themes@npm:4.19.9"
+  dependencies:
+    "@codemirror/language": ^6.0.0
+    "@codemirror/state": ^6.0.0
+    "@codemirror/view": ^6.0.0
+  peerDependencies:
+    "@codemirror/language": ">=6.0.0"
+    "@codemirror/state": ">=6.0.0"
+    "@codemirror/view": ">=6.0.0"
+  checksum: 96d5117744d7b9f768454ed710389d589903aa9503c4a15b5ce8496033b07235a2014a9ec34925b95019f70d74fbfc751212ca9c6b1e921d58fc22e4d9203707
   languageName: node
   linkType: hard
 
@@ -2308,6 +2342,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "codui@workspace:."
   dependencies:
+    "@babel/runtime": ^7.20.13
+    "@lezer/highlight": ^1.1.3
     eslint: ^8.34.0
     lerna: ^6.5.1
     prettier: ^2.8.4
@@ -7685,9 +7721,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:^3.2.6":
-  version: 3.2.6
-  resolution: "tailwindcss@npm:3.2.6"
+"tailwindcss@npm:^3.2.7":
+  version: 3.2.7
+  resolution: "tailwindcss@npm:3.2.7"
   dependencies:
     arg: ^5.0.2
     chokidar: ^3.5.3
@@ -7717,7 +7753,7 @@ __metadata:
   bin:
     tailwind: lib/cli.js
     tailwindcss: lib/cli.js
-  checksum: 908451ff7b334b2aec2a0ba5bf426a786a3f190b440a1f8ede206d889448ffda3b77349829f06dc297336fd0b5edc696ae5f23b808d6444bb5c689f218e95323
+  checksum: 819446bf67acea1fc738f345d80f328b7bb6e6ef4b24070249a11219307045881cf97baed6258cbdcede7fa18886e9c9c41fd0fa087b3e987cf2948560a2f164
   languageName: node
   linkType: hard
 
@@ -7806,6 +7842,13 @@ __metadata:
   version: 2.3.8
   resolution: "through@npm:2.3.8"
   checksum: a38c3e059853c494af95d50c072b83f8b676a9ba2818dcc5b108ef252230735c54e0185437618596c790bbba8fcdaef5b290405981ffa09dce67b1f1bf190cbd
+  languageName: node
+  linkType: hard
+
+"tiny-invariant@npm:^1.3.1":
+  version: 1.3.1
+  resolution: "tiny-invariant@npm:1.3.1"
+  checksum: 872dbd1ff20a21303a2fd20ce3a15602cfa7fcf9b228bd694a52e2938224313b5385a1078cb667ed7375d1612194feaca81c4ecbe93121ca1baebe344de4f84c
   languageName: node
   linkType: hard
 
