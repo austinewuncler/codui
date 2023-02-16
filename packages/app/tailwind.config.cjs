@@ -1,5 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.tsx'],
-  theme: { fontFamily: { cursive: ['Dr Sugiyama', 'cursive'] } },
+  darkMode: 'class',
+  theme: {
+    fontFamily: { cursive: ['Dr Sugiyama', 'cursive'] },
+    transitionDuration: { DEFAULT: '300ms' },
+  },
 };
