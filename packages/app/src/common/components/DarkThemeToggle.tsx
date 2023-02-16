@@ -11,7 +11,7 @@ const DarkThemeToggle = (): JSX.Element => {
     <button
       type="button"
       title="dark theme toggle"
-      className="relative flex h-6 rounded-full bg-sky-100 p-0.5 shadow-inner transition-colors dark:bg-sky-900"
+      className="relative flex h-6 rounded-full bg-primary-light p-0.5 shadow-inner transition-colors dark:bg-primary-dark"
       onClick={toggleDarkTheme}
     >
       <DarkThemeToggleIcon mode="light" />
@@ -19,7 +19,7 @@ const DarkThemeToggle = (): JSX.Element => {
       <div className="absolute inset-0 flex justify-start p-0.5 dark:justify-end">
         <motion.div
           layout
-          className="h-5 w-5 rounded-full bg-sky-500 drop-shadow"
+          className="h-5 w-5 rounded-full bg-primary drop-shadow"
         />
       </div>
     </button>

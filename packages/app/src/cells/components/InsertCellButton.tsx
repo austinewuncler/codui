@@ -9,8 +9,8 @@ interface Props {
 
 const InsertCellButton = ({ cellType }: Props): JSX.Element => (
   <button
-    className={`grid h-10 w-10 place-content-center rounded-full text-white dark:text-black ${
-      cellType === 'code' ? 'bg-orange-500' : 'bg-yellow-500'
+    className={`grid h-10 w-10 place-content-center rounded-full text-white transition-colors dark:text-black ${
+      cellType === 'code' ? 'bg-secondary' : 'bg-accent'
     }`}
   >
     {cellType === 'code' ? (
