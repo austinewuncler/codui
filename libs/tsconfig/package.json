@@ -1,0 +1,12 @@
+{
+  "name": "@codui/tsconfig",
+  "version": "0.0.0",
+  "packageManager": "yarn@3.4.1",
+  "files": [
+    "node.json",
+    "react.json"
+  ],
+  "dependencies": {
+    "@tsconfig/node-lts-strictest": "^18.12.1"
+  }
+}
