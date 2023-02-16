@@ -1,18 +1,43 @@
-import { PlusSmallIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 import React from 'react';
 
-import InsertCellButton from './InsertCellButton';
+import { useTypedSelector } from '~/common/hooks';
 
-const Cells = (): JSX.Element => (
-  <ul>
-    <li>
-      <div className="flex items-center justify-center gap-2">
-        <InsertCellButton cellType="code" />
-        <PlusSmallIcon className="h-6 w-6" />
-        <InsertCellButton cellType="markdown" />
-      </div>
-    </li>
-  </ul>
-);
+import { selectCells } from '../cells.reducer';
+import CodeCell from './CodeCell';
+import InsertCell from './InsertCell';
+import MarkdownCell from './MarkdownCell';
+
+const Cells = (): JSX.Element => {
+  const cells = useTypedSelector(selectCells);
+
+  return (
+    <ul className="flex flex-col gap-4">
+      <li>
+        <InsertCell prevCellId={null} />
+      </li>
+      {cells.map(({ id, type }) => (
+        <motion.li
+          key={id}
+          className="flex flex-col gap-4"
+          layout
+          initial={{ opacity: 0, scaleY: 0 }}
+          animate={{
+            opacity: 1,
+            scaleY: 1,
+            transformOrigin: 'top',
+            transition: { type: 'tween' },
+          }}
+        >
+          <article className="overflow-hidden rounded-lg">
+            <header className="h-12 bg-primary-light transition-colors dark:bg-primary-dark" />
+            {type === 'code' ? <CodeCell /> : <MarkdownCell />}
+          </article>
+          <InsertCell prevCellId={id} />
+        </motion.li>
+      ))}
+    </ul>
+  );
+};
 
 export default Cells;
