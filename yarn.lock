@@ -47,6 +47,7 @@ __metadata:
   dependencies:
     "@codui/eslint-plugin": "workspace:^"
     "@codui/tsconfig": "workspace:^"
+    "@heroicons/react": ^2.0.15
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.52.0
@@ -278,6 +279,15 @@ __metadata:
   version: 1.1.3
   resolution: "@gar/promisify@npm:1.1.3"
   checksum: 4059f790e2d07bf3c3ff3e0fec0daa8144fe35c1f6e0111c9921bd32106adaa97a4ab096ad7dab1e28ee6a9060083c4d1a4ada42a7f5f3f7a96b8812e2b757c1
+  languageName: node
+  linkType: hard
+
+"@heroicons/react@npm:^2.0.15":
+  version: 2.0.15
+  resolution: "@heroicons/react@npm:2.0.15"
+  peerDependencies:
+    react: ">= 16"
+  checksum: 11ec68629e73cb8ffe893090594ca5c02f4369dd964f1c95445bd83769d45df4df85cd12b021519c2bd14fdb38e3ce2ac6f2752e7c6dd578c26dc0ec75a5a35a
   languageName: node
   linkType: hard
 
