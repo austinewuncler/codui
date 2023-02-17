@@ -3,6 +3,7 @@ import React from 'react';
 
 import { useTypedSelector } from '~/common/hooks';
 
+import { MarkdownEditorProvider } from '../providers';
 import { selectCells } from '../reducers';
 import CellActionButton from './CellActionButton';
 import CodeCell from './CodeCell';
@@ -27,21 +28,23 @@ const Cells = (): JSX.Element => {
             animate={{ opacity: 1, scaleY: 1 }}
             exit={{ opacity: 0, scaleY: 0 }}
           >
-            <article className="overflow-hidden rounded-lg shadow-md">
-              <header className="flex h-12 items-center justify-between bg-primary-light px-4 transition-colors dark:bg-primary-dark">
-                <CellActionButton cellId={id} action="formatCellContent" />
-                <div className="flex gap-1">
-                  <CellActionButton cellId={id} action="moveCellUp" />
-                  <CellActionButton cellId={id} action="moveCellDown" />
-                  <CellActionButton cellId={id} action="deleteCell" />
-                </div>
-              </header>
-              {type === 'code' ? (
-                <CodeCell cellId={id} content={content} />
-              ) : (
-                <MarkdownCell cellId={id} content={content} />
-              )}
-            </article>
+            <MarkdownEditorProvider isActive={type === 'markdown'}>
+              <article className="overflow-hidden rounded-lg shadow-md">
+                <header className="flex h-12 items-center justify-between bg-primary-light px-4 transition-colors dark:bg-primary-dark">
+                  <CellActionButton cellId={id} action="formatCellContent" />
+                  <div className="flex gap-1">
+                    <CellActionButton cellId={id} action="moveCellUp" />
+                    <CellActionButton cellId={id} action="moveCellDown" />
+                    <CellActionButton cellId={id} action="deleteCell" />
+                  </div>
+                </header>
+                {type === 'code' ? (
+                  <CodeCell cellId={id} content={content} />
+                ) : (
+                  <MarkdownCell cellId={id} content={content} />
+                )}
+              </article>
+            </MarkdownEditorProvider>
             <InsertCell prevCellId={id} />
           </motion.li>
         ))}

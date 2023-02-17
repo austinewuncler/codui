@@ -6,5 +6,9 @@
 
 .ͼ1 .cm-scroller {
   @apply font-mono;
+}
+
+.ͼ1 .cm-scroller,
+.md-editor-preview {
   @apply scrollbar-thin scrollbar-track-primary-light scrollbar-thumb-primary scrollbar-track-rounded-full scrollbar-thumb-rounded-full dark:scrollbar-track-primary-dark;
 }

@@ -87,6 +87,5 @@ export const {
   onDeleteCell,
   onDeleteAllCells,
 } = cellsSlice.actions;
-export const { selectAll: selectCells } = cellsAdapter.getSelectors(
-  ({ cells }: RootState) => cells
-);
+export const { selectAll: selectCells, selectIds: selectCellIds } =
+  cellsAdapter.getSelectors(({ cells }: RootState) => cells);

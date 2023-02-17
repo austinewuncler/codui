@@ -1,9 +1,11 @@
-import type { EntityId } from '@reduxjs/toolkit';
+import { createSelector, type EntityId } from '@reduxjs/toolkit';
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useRef } from 'react';
 import { useUpdateEffect } from 'usehooks-ts';
 
+import { selectCellIds } from '~/cells/reducers';
 import { Loading } from '~/common/components';
+import { useTypedSelector } from '~/common/hooks';
 
 import { useBundle } from '../hooks';
 
@@ -44,8 +46,13 @@ interface Props {
 }
 
 const BundlePreview = ({ cellId }: Props): JSX.Element => {
-  const { isLoading, error, content } = useBundle(cellId);
   const iFrameRef = useRef<HTMLIFrameElement>(null);
+  const { isLoading, error, content } = useBundle(cellId);
+  const cellIndex = useTypedSelector(
+    createSelector(selectCellIds, (ids) => ids.findIndex((id) => id === cellId))
+  );
+
+  console.log(cellIndex);
 
   useUpdateEffect(() => {
     if (iFrameRef.current != null) iFrameRef.current.srcdoc = PREVIEW_HTML;

@@ -4,7 +4,7 @@ import { useTypedSelector } from '~/common/hooks';
 
 import { selectCells } from '../reducers';
 
-const renderFunc = `import { createRoot } from 'react-dom/client';
+const renderFn = `import { createRoot } from 'react-dom/client';
 const rootEl = document.getElementById('root');
 var render = (value) => {
   if (typeof value === 'object') {
@@ -19,7 +19,7 @@ var render = (value) => {
   }
 };`;
 
-const renderFuncNoOp = 'var render = () => {}';
+const renderFnNoOp = 'var render = () => {}';
 
 const useCode = (cellId: EntityId): string =>
   useTypedSelector(
@@ -29,7 +29,7 @@ const useCode = (cellId: EntityId): string =>
         .filter(({ type }) => type === 'code')
         .map(
           ({ id, content }) =>
-            `${id === cellId ? renderFunc : renderFuncNoOp}\n${content}`
+            `${id === cellId ? renderFn : renderFnNoOp}\n${content}`
         )
         .join('\n')
     )
