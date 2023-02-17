@@ -9,12 +9,8 @@ import React from 'react';
 
 import { useTypedDispatch } from '~/common/hooks';
 
-import {
-  onDeleteCell,
-  onMoveCell,
-  onUpdateCellContent,
-} from '../cells.reducer';
-import type { CellAction } from '../cells.type';
+import { onDeleteCell, onMoveCell, onUpdateCellContent } from '../reducers';
+import type { CellAction } from '../types';
 
 interface Props {
   cellId: EntityId;

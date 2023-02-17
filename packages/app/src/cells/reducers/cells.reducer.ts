@@ -14,8 +14,8 @@ import type {
   InsertCellPayload,
   MoveCellPayload,
   UpdateCellContentPayload,
-} from './cells.type';
-import { formatCode, formatMarkdown } from './cells.utils';
+} from '../types';
+import { formatCode, formatMarkdown } from '../utils';
 
 const cellsAdapter = createEntityAdapter<Cell>();
 const initialState = cellsAdapter.getInitialState();

@@ -5,10 +5,10 @@ import CodeEditor from '@uiw/react-codemirror';
 import { Resizable } from 're-resizable';
 import React, { useCallback } from 'react';
 
-import BundlePreview from '~/bundle/BundlePreview';
+import { BundlePreview } from '~/bundles/components';
 import { useDarkTheme, useTypedDispatch } from '~/common/hooks';
 
-import { onUpdateCellContent } from '../cells.reducer';
+import { onUpdateCellContent } from '../reducers';
 
 interface Props {
   cellId: EntityId;

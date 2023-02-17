@@ -5,7 +5,7 @@ import { useUpdateEffect } from 'usehooks-ts';
 
 import { Loading } from '~/common/components';
 
-import useBundle from './useBundle';
+import { useBundle } from '../hooks';
 
 const PREVIEW_HTML = `<html>
   <head> </head>

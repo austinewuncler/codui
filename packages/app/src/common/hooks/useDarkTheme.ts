@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 
-import { type DarkThemeContext, darkThemeContext } from '../contexts';
+import { darkThemeContext } from '../contexts';
+import type { DarkTheme } from '../types';
 
-const useDarkTheme = (): DarkThemeContext => useContext(darkThemeContext);
+const useDarkTheme = (): DarkTheme => useContext(darkThemeContext);
 
 export default useDarkTheme;

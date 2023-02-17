@@ -2,7 +2,7 @@ import { createSelector, type EntityId } from '@reduxjs/toolkit';
 
 import { useTypedSelector } from '~/common/hooks';
 
-import { selectCells } from './cells.reducer';
+import { selectCells } from '../reducers';
 
 const renderFunc = `import { createRoot } from 'react-dom/client';
 const rootEl = document.getElementById('root');

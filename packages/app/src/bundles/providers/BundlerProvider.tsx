@@ -1,21 +1,21 @@
 import { motion } from 'framer-motion';
-import React from 'react';
+import React, { type PropsWithChildren, useRef } from 'react';
 import { useImmerReducer } from 'use-immer';
+import { useEffectOnce } from 'usehooks-ts';
 
-import { bundlerInitReducer } from '~/bundle/bundle.reducer';
-import { initializeBundler } from '~/bundle/bundle.utils';
-import { Cells } from '~/cells/components';
+import { Loading } from '~/common/components';
 
-import { useRunOnce } from '../hooks';
-import Loading from './Loading';
+import { bundlerReducer } from '../reducers';
+import { initializeBundler } from '../utils';
 
-const MainContent = (): JSX.Element => {
-  const [{ status, error }, dispatch] = useImmerReducer(bundlerInitReducer, {
+const BundlerProvider = ({ children }: PropsWithChildren): JSX.Element => {
+  const hasRun = useRef(false);
+  const [{ status, error }, dispatch] = useImmerReducer(bundlerReducer, {
     status: 'idle',
     error: null,
   });
 
-  useRunOnce(() => {
+  useEffectOnce(() => {
     const initBundler = async (): Promise<void> => {
       dispatch({ type: 'BUNDLER_INIT_START' });
 
@@ -29,7 +29,10 @@ const MainContent = (): JSX.Element => {
         });
       }
     };
-    if (status === 'idle') void initBundler();
+    if (!hasRun.current && status === 'idle') {
+      void initBundler();
+      hasRun.current = true;
+    }
   });
 
   return status === 'pending' ? (
@@ -45,10 +48,8 @@ const MainContent = (): JSX.Element => {
       </div>
     </motion.div>
   ) : (
-    <div className="container mx-auto px-4 py-8 sm:px-0">
-      <Cells />
-    </div>
+    <div className="container mx-auto px-4 py-8 sm:px-0">{children}</div>
   );
 };
 
-export default MainContent;
+export default BundlerProvider;

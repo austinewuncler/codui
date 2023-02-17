@@ -3,7 +3,7 @@ import React from 'react';
 
 import { useTypedSelector } from '~/common/hooks';
 
-import { selectCells } from '../cells.reducer';
+import { selectCells } from '../reducers';
 import CellActionButton from './CellActionButton';
 import CodeCell from './CodeCell';
 import InsertCell from './InsertCell';

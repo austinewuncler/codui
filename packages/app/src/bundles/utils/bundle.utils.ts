@@ -1,14 +1,7 @@
-import { build, initialize } from 'esbuild-wasm';
+import { build } from 'esbuild-wasm';
 import invariant from 'tiny-invariant';
 
-import { loadPlugin, resolvePlugin } from './plugins';
-
-export const initializeBundler = async (): Promise<void> => {
-  await initialize({
-    wasmURL: 'https://unpkg.com/esbuild-wasm@0.17.8/esbuild.wasm',
-    worker: true,
-  });
-};
+import { loadPlugin, resolvePlugin } from '../plugins';
 
 export const buildBundle = async (code: string): Promise<string> => {
   const { outputFiles } = await build({

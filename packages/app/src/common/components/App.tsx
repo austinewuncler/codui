@@ -1,9 +1,11 @@
 import React from 'react';
 
+import { BundlerProvider } from '~/bundles/providers';
+import { Cells } from '~/cells/components';
+
 import { DarkThemeProvider, StoreProvider } from '../providers';
 import DarkThemeToggle from './DarkThemeToggle';
 import Logo from './Logo';
-import MainContent from './MainContent';
 
 const App = (): JSX.Element => (
   <DarkThemeProvider>
@@ -16,7 +18,9 @@ const App = (): JSX.Element => (
           </div>
         </header>
         <main className="h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-track-primary-light scrollbar-thumb-primary scrollbar-track-rounded-full scrollbar-thumb-rounded-full dark:scrollbar-track-primary-dark">
-          <MainContent />
+          <BundlerProvider>
+            <Cells />
+          </BundlerProvider>
         </main>
       </StoreProvider>
     </div>

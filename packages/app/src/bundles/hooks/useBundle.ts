@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { useImmerReducer } from 'use-immer';
 import { useDebounce } from 'usehooks-ts';
 
-import useCode from '~/cells/useCode';
+import { useCode } from '~/cells/hooks';
 
-import { bundleReducer } from './bundle.reducer';
-import type { BundleState } from './bundle.type';
-import { buildBundle } from './bundle.utils';
+import { bundleReducer } from '../reducers';
+import type { BundleState } from '../types';
+import { buildBundle } from '../utils';
 
 const useBundle = (cellId: EntityId): BundleState => {
   const [bundle, dispatch] = useImmerReducer(bundleReducer, {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { onDeleteAllCells } from '~/cells/cells.reducer';
+import { onDeleteAllCells } from '~/cells/reducers';
 
 import { useTypedDispatch } from '../hooks';
 

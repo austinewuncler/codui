@@ -1,8 +1,8 @@
 import { createContext } from 'react';
 
-import type { DarkThemeContext } from './theme.types';
+import type { DarkTheme } from '../types';
 
-const darkThemeContext = createContext<DarkThemeContext>({
+const darkThemeContext = createContext<DarkTheme>({
   isDarkTheme: false,
   toggleDarkTheme: () => {},
 });

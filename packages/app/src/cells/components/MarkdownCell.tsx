@@ -5,7 +5,7 @@ import React, { useCallback } from 'react';
 
 import { useTypedDispatch } from '~/common/hooks';
 
-import { onUpdateCellContent } from '../cells.reducer';
+import { onUpdateCellContent } from '../reducers';
 
 interface Props {
   cellId: EntityId;

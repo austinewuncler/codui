@@ -4,8 +4,8 @@ import React from 'react';
 
 import { useTypedDispatch } from '~/common/hooks';
 
-import { onInsertCell } from '../cells.reducer';
-import type { CellType } from '../cells.type';
+import { onInsertCell } from '../reducers';
+import type { CellType } from '../types';
 
 interface Props {
   prevCellId: EntityId | null;
