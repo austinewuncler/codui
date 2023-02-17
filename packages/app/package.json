@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "@codemirror/view": "^6.9.0",
-    "@codui/eslint-plugin": "workspace:^",
+    "@codui/eslint-config-react": "workspace:^",
     "@codui/tsconfig": "workspace:^",
     "@types/prettier": "^2.7.2",
     "@types/react": "^18.0.28",

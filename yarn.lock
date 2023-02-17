@@ -350,7 +350,7 @@ __metadata:
   dependencies:
     "@codemirror/lang-javascript": ^6.1.4
     "@codemirror/view": ^6.9.0
-    "@codui/eslint-plugin": "workspace:^"
+    "@codui/eslint-config-react": "workspace:^"
     "@codui/tsconfig": "workspace:^"
     "@heroicons/react": ^2.0.16
     "@reduxjs/toolkit": ^1.9.2
@@ -396,9 +396,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@codui/eslint-plugin@workspace:^, @codui/eslint-plugin@workspace:libs/eslint":
+"@codui/eslint-config-react@workspace:^, @codui/eslint-config-react@workspace:libs/eslint-react":
   version: 0.0.0-use.local
-  resolution: "@codui/eslint-plugin@workspace:libs/eslint"
+  resolution: "@codui/eslint-config-react@workspace:libs/eslint-react"
   dependencies:
     "@typescript-eslint/parser": ^5.52.0
     eslint-config-prettier: ^8.6.0

@@ -1,11 +1,8 @@
 {
-  "name": "@codui/eslint-plugin",
+  "name": "@codui/eslint-config-react",
   "version": "0.0.0",
   "packageManager": "yarn@3.4.1",
-  "files": [
-    "src"
-  ],
-  "main": "src/index.js",
+  "main": ".eslintrc.js",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": "*",
     "eslint": "*",
