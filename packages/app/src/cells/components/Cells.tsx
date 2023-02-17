@@ -39,7 +39,7 @@ const Cells = (): JSX.Element => {
               {type === 'code' ? (
                 <CodeCell cellId={id} content={content} />
               ) : (
-                <MarkdownCell />
+                <MarkdownCell cellId={id} content={content} />
               )}
             </article>
             <InsertCell prevCellId={id} />

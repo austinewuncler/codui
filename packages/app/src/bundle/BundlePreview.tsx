@@ -72,7 +72,7 @@ const BundlePreview = ({ cellId }: Props): JSX.Element => {
             <div className="absolute inset-0 overflow-hidden">
               <motion.div
                 key={`${cellId}-${error}`}
-                className="bg-red p-4"
+                className="bg-red p-4 text-white"
                 initial={{ y: '-100%' }}
                 animate={{ y: 0, transition: { type: 'tween' } }}
                 exit={{ y: '-100%', transition: { type: 'tween' } }}

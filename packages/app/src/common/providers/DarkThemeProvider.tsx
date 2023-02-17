@@ -13,7 +13,12 @@ const DarkThemeProvider = ({ children }: PropsWithChildren): JSX.Element => {
 
   return (
     <darkThemeContext.Provider value={context}>
-      <div className={isDarkMode ? 'dark' : ''}>{children}</div>
+      <div
+        className={isDarkMode ? 'dark' : ''}
+        data-color-mode={isDarkMode ? 'dark' : 'light'}
+      >
+        {children}
+      </div>
     </darkThemeContext.Provider>
   );
 };

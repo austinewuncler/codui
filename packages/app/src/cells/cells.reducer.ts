@@ -15,7 +15,7 @@ import type {
   MoveCellPayload,
   UpdateCellContentPayload,
 } from './cells.type';
-import { formatCode } from './cells.utils';
+import { formatCode, formatMarkdown } from './cells.utils';
 
 const cellsAdapter = createEntityAdapter<Cell>();
 const initialState = cellsAdapter.getInitialState();
@@ -46,10 +46,15 @@ const cellsSlice = createSlice({
       else {
         const cell = state.entities[cellId];
         invariant(cell);
-        const { id, content: unformatted } = cell;
+        const { id, type, content: unformatted } = cell;
         cellsAdapter.updateOne(state, {
           id,
-          changes: { content: formatCode(unformatted) },
+          changes: {
+            content:
+              type === 'code'
+                ? formatCode(unformatted)
+                : formatMarkdown(unformatted),
+          },
         });
       }
     },
