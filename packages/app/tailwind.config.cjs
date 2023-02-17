@@ -11,10 +11,12 @@ module.exports = {
       slate: { dark: '#0f172a', light: '#f1f5f9' },
       accent: '#FFB804',
       secondary: '#FF3404',
+      red: '#f43f5e',
     },
     fontFamily: {
       cursive: ['Dr Sugiyama', 'cursive'],
       mono: ['Fira Code', 'monospace'],
+      sans: ['Open Sans', 'sans-serif'],
     },
     transitionDuration: { DEFAULT: '300ms' },
   },

@@ -5,6 +5,7 @@ import CodeEditor from '@uiw/react-codemirror';
 import { Resizable } from 're-resizable';
 import React, { useCallback } from 'react';
 
+import BundlePreview from '~/bundle/BundlePreview';
 import { useDarkTheme, useTypedDispatch } from '~/common/hooks';
 
 import { onUpdateCellContent } from '../cells.reducer';
@@ -48,9 +49,7 @@ const CodeCell = ({ cellId, content }: Props): JSX.Element => {
           basicSetup={{ foldGutter: false }}
         />
       </Resizable>
-      <div className="flex-auto bg-slate-light p-4 transition-colors dark:bg-slate-dark">
-        <iframe title="bundle preview" className="w-full rounded-md bg-white" />
-      </div>
+      <BundlePreview cellId={cellId} />
     </Resizable>
   );
 };
