@@ -1,6 +1,7 @@
 import type { EntityId } from '@reduxjs/toolkit';
 import { AnimatePresence, motion } from 'framer-motion';
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
+import { useUpdateEffect } from 'usehooks-ts';
 
 import { Loading } from '~/common/components';
 
@@ -46,7 +47,7 @@ const BundlePreview = ({ cellId }: Props): JSX.Element => {
   const { isLoading, error, content } = useBundle(cellId);
   const iFrameRef = useRef<HTMLIFrameElement>(null);
 
-  useEffect(() => {
+  useUpdateEffect(() => {
     if (iFrameRef.current != null) iFrameRef.current.srcdoc = PREVIEW_HTML;
 
     const timeout = setTimeout(() => {

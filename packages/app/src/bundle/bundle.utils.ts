@@ -20,5 +20,6 @@ export const buildBundle = async (code: string): Promise<string> => {
   });
   const bundle = outputFiles?.[0]?.text;
   invariant(bundle);
+
   return bundle;
 };

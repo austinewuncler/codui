@@ -36,15 +36,15 @@ export const bundlerInitReducer: ImmerReducer<
 > = (state, action) => {
   switch (action.type) {
     case 'BUNDLER_INIT_START':
-      state.isLoading = true;
-      state.error = null;
+      state.status = 'pending';
       break;
-    case 'BUNDLER_INIT_FAILED':
-      state.isLoading = false;
+    case 'BUNDLER_INIT_REJECTED':
+      state.status = 'rejected';
       state.error = action.payload;
       break;
-    case 'BUNDLER_INIT_SUCCEEDED':
-      state.isLoading = false;
+    case 'BUNDLER_INIT_FULFILLED':
+      state.status = 'fulfilled';
+      state.error = null;
       break;
     default:
       break;

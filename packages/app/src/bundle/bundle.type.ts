@@ -19,20 +19,20 @@ export type BundleAction =
   | BundleFailedAction
   | BundleSucceededAction;
 export interface BundlerState {
-  isLoading: boolean;
+  status: 'idle' | 'pending' | 'rejected' | 'fulfilled';
   error: string | null;
 }
 export interface BundlerInitStartAction {
   type: 'BUNDLER_INIT_START';
 }
-export interface BundlerInitFailedAction {
-  type: 'BUNDLER_INIT_FAILED';
+export interface BundlerInitRejectedAction {
+  type: 'BUNDLER_INIT_REJECTED';
   payload: string;
 }
-export interface BundlerInitSucceededAction {
-  type: 'BUNDLER_INIT_SUCCEEDED';
+export interface BundlerInitFulfilledAction {
+  type: 'BUNDLER_INIT_FULFILLED';
 }
 export type BundlerInitAction =
   | BundlerInitStartAction
-  | BundlerInitFailedAction
-  | BundlerInitSucceededAction;
+  | BundlerInitRejectedAction
+  | BundlerInitFulfilledAction;

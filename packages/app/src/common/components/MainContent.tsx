@@ -10,30 +10,31 @@ import { useRunOnce } from '../hooks';
 import Loading from './Loading';
 
 const MainContent = (): JSX.Element => {
-  const [{ isLoading, error }, dispatch] = useImmerReducer(bundlerInitReducer, {
-    isLoading: false,
+  const [{ status, error }, dispatch] = useImmerReducer(bundlerInitReducer, {
+    status: 'idle',
     error: null,
   });
 
   useRunOnce(() => {
     const initBundler = async (): Promise<void> => {
       dispatch({ type: 'BUNDLER_INIT_START' });
+
       try {
         await initializeBundler();
-        dispatch({ type: 'BUNDLER_INIT_SUCCEEDED' });
-      } catch (error) {
+        dispatch({ type: 'BUNDLER_INIT_FULFILLED' });
+      } catch (error: any) {
         dispatch({
-          type: 'BUNDLER_INIT_FAILED',
-          payload: 'failed to initialize',
+          type: 'BUNDLER_INIT_REJECTED',
+          payload: error.message,
         });
       }
     };
-    void initBundler();
+    if (status === 'idle') void initBundler();
   });
 
-  return isLoading ? (
+  return status === 'pending' ? (
     <Loading />
-  ) : error != null ? (
+  ) : status === 'rejected' ? (
     <motion.div
       className="fixed inset-x-0 top-0 bg-red"
       initial={{ y: '-100%' }}
