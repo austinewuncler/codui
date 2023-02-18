@@ -22,6 +22,7 @@
   },
   "scripts": {
     "app:dev": "lerna run --scope=@codui/app dev",
+    "cli:dev": "lerna run --scope=@codui/cli dev --",
     "build": "lerna run --scope=@codui/app build",
     "lint": "lerna run lint"
   }
