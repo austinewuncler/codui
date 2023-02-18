@@ -5,7 +5,7 @@
   },
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
-  "conventionalCommits.scopes": ["tsconfig", "eslint", "app", "cli"],
+  "conventionalCommits.scopes": ["tsconfig", "eslint", "app", "cli", "server"],
   "eslint.nodePath": ".yarn/sdks",
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }
