@@ -13,6 +13,7 @@
     "@codemirror/view": "^6.9.0",
     "@lezer/common": "^1.0.2",
     "@lezer/highlight": "^1.1.3",
+    "concurrently": "^7.6.0",
     "eslint": "^8.34.0",
     "lerna": "^6.5.1",
     "nx": "^15.7.2",
@@ -22,7 +23,8 @@
   },
   "scripts": {
     "app:dev": "lerna run --scope=@codui/app dev",
-    "cli:dev": "lerna run --scope=@codui/cli dev --",
+    "cli:dev": "lerna run --scope=@codui/cli dev",
+    "dev": "concurrently -n app,cli -c auto -P --kill-others-on-fail 'yarn app:dev' 'yarn cli:dev -- {@}' --",
     "build": "lerna run --scope=@codui/app build",
     "lint": "lerna run lint"
   }
