@@ -21,7 +21,7 @@ const startCommand = new Command('start')
     );
 
     try {
-      await startServer({ port: parseInt(port) });
+      await startServer({ port: parseInt(port), filepath });
       console.info(
         `${colors.bgBlue(colors.black(' INFO '))} Running ${colors.dim(
           filepath
