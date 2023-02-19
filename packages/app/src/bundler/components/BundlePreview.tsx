@@ -52,8 +52,6 @@ const BundlePreview = ({ cellId }: Props): JSX.Element => {
     createSelector(selectCellIds, (ids) => ids.findIndex((id) => id === cellId))
   );
 
-  console.log(cellIndex);
-
   useUpdateEffect(() => {
     if (iFrameRef.current != null) iFrameRef.current.srcdoc = PREVIEW_HTML;
 
@@ -65,7 +63,7 @@ const BundlePreview = ({ cellId }: Props): JSX.Element => {
     return () => {
       clearTimeout(timeout);
     };
-  }, [content]);
+  }, [content, cellIndex]);
 
   return (
     <div className="relative flex-auto bg-slate-light p-4 transition-colors dark:bg-slate-dark">

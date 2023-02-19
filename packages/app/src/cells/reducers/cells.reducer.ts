@@ -94,7 +94,6 @@ const cellsSlice = createSlice({
       state.isLoading = true;
     })
       .addCase(onInitializeCells.rejected, (state, { error }) => {
-        console.log(error);
         state.isLoading = false;
         state.error = error.message;
       })

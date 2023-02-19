@@ -34,5 +34,18 @@ export const cellsRouter = router({
         });
     }
   }),
+  saveCells: procedure
+    .input(z.object({ cells: z.array(cellSchema) }))
+    .mutation(async ({ ctx, input }) => {
+      try {
+        await writeFile(ctx.filepath, JSON.stringify(input.cells), 'utf-8');
+      } catch (error: any) {
+        throw new TRPCError({
+          code: 'INTERNAL_SERVER_ERROR',
+          message: error.message,
+          cause: error,
+        });
+      }
+    }),
 });
 export type CellsRouter = typeof cellsRouter;
