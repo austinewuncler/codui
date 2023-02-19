@@ -5,7 +5,7 @@ import CodeEditor from '@uiw/react-codemirror';
 import { Resizable } from 're-resizable';
 import React, { useCallback } from 'react';
 
-import { BundlePreview } from '~/bundles/components';
+import { BundlePreview } from '~/bundler/components';
 import { useDarkTheme, useTypedDispatch } from '~/common/hooks';
 
 import { onUpdateCellContent } from '../reducers';

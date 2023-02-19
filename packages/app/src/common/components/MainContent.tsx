@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useImmerReducer } from 'use-immer';
 
-import { bundlerReducer } from '~/bundles/reducers';
-import { initializeBundler } from '~/bundles/utils';
+import { bundlerReducer } from '~/bundler/reducers';
+import { initializeBundler } from '~/bundler/utils';
 import { Cells } from '~/cells/components';
 import { onInitializeCells } from '~/cells/reducers';
 import { Loading } from '~/common/components';
