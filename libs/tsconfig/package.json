@@ -1,6 +1,7 @@
 {
   "name": "@codui/tsconfig",
   "version": "0.0.0",
+  "private": true,
   "packageManager": "yarn@3.4.1",
   "files": [
     "node.json",

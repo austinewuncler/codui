@@ -5,6 +5,8 @@
 !.yarn/sdks
 !.yarn/versions
 
+.env
 .pnp.*
 dist
 node_modules
+lerna-debug.log

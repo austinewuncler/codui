@@ -1,6 +1,7 @@
 {
   "name": "@codui/eslint-config-react",
   "version": "0.0.0",
+  "private": true,
   "packageManager": "yarn@3.4.1",
   "main": ".eslintrc.js",
   "peerDependencies": {
