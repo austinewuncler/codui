@@ -22,7 +22,7 @@ const CellActionButton = ({ cellId, action }: Props): JSX.Element => {
 
   return (
     <button
-      className="grid h-10 w-10 place-content-center text-white transition-colors hover:text-primary"
+      className="grid h-10 w-10 place-content-center text-accent-light transition-colors hover:text-primary-light dark:text-accent-dark dark:hover:text-primary-dark"
       onClick={() => {
         if (action === 'formatCellContent')
           dispatch(onUpdateCellContent({ cellId }));

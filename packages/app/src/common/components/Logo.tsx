@@ -10,10 +10,14 @@ const Logo = (): JSX.Element => {
   return (
     <button
       type="button"
-      className="font-cursive text-6xl"
+      className="font-cursive text-6xl text-neutral-dark transition-colors dark:text-neutral-light"
       onClick={() => dispatch(onDeleteAllCells())}
     >
-      co<span className="text-primary">&lt;&#124;</span>ui
+      co
+      <span className="text-primary-light transition-colors dark:text-primary-dark">
+        &lt;&#124;
+      </span>
+      ui
     </button>
   );
 };

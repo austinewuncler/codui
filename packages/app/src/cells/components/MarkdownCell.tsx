@@ -29,7 +29,12 @@ const MarkdownCell = ({ cellId, content }: Props): JSX.Element => {
   });
 
   return isEditing ? (
-    <Resizable defaultSize={{ width: 'auto', height: 'auto' }} minHeight={182}>
+    <Resizable
+      defaultSize={{ width: 'auto', height: 'auto' }}
+      minHeight={182}
+      enable={{ bottom: true }}
+      handleStyles={{ bottom: { cursor: 'ns-resize' } }}
+    >
       <MarkdownEditor
         className="h-full"
         height="100%"

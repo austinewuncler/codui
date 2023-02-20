@@ -66,7 +66,7 @@ const BundlePreview = ({ cellId }: Props): JSX.Element => {
   }, [content, cellIndex]);
 
   return (
-    <div className="relative flex-auto bg-slate-light p-4 transition-colors dark:bg-slate-dark">
+    <div className="relative flex-auto bg-neutral-light p-4 transition-colors dark:bg-neutral-dark">
       {isLoading ? (
         <div className="absolute inset-0">
           <Loading />

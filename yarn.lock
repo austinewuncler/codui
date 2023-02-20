@@ -363,7 +363,7 @@ __metadata:
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.52.0
     "@typescript-eslint/parser": ^5.52.0
-    "@uiw/codemirror-theme-xcode": ^4.19.9
+    "@uiw/codemirror-theme-solarized": ^4.19.9
     "@uiw/react-codemirror": ^4.19.9
     "@uiw/react-markdown-editor": ^5.11.1
     "@vitejs/plugin-react-swc": ^3.2.0
@@ -2368,12 +2368,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@uiw/codemirror-theme-xcode@npm:^4.19.9":
+"@uiw/codemirror-theme-solarized@npm:^4.19.9":
   version: 4.19.9
-  resolution: "@uiw/codemirror-theme-xcode@npm:4.19.9"
+  resolution: "@uiw/codemirror-theme-solarized@npm:4.19.9"
   dependencies:
     "@uiw/codemirror-themes": 4.19.9
-  checksum: afeb84d7173245eb49476b0419843e7eaca75e2fa541d15dd81137eb5a1309d1b20a8116c7bef35c70d9e9d1bc22e810e1a12a1f0ebb7e4fe2ec36c7014033d8
+  checksum: 8a06cdcaa11afd8ac5e1af554ebdd04696628614bdb0058f8d3fd7b2367b9582f6d159b9db5fe7d6c71e3a7b91ebc0efb79824626876b48c8265607b5fc3d599
   languageName: node
   linkType: hard
 

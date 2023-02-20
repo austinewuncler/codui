@@ -17,9 +17,7 @@ const InsertCellButton = ({ prevCellId, type }: Props): JSX.Element => {
 
   return (
     <button
-      className={`grid h-10 w-10 place-content-center rounded-full text-white transition-colors dark:text-black ${
-        type === 'code' ? 'bg-secondary' : 'bg-accent'
-      }`}
+      className="grid h-10 w-10 place-content-center rounded-full bg-accent-light text-white transition-all hover:scale-110 dark:bg-accent-dark dark:text-black"
       onClick={() => dispatch(onInsertCell({ prevCellId, type }))}
     >
       {type === 'code' ? (

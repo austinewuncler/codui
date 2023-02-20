@@ -10,5 +10,14 @@
 
 .ͼ1 .cm-scroller,
 .md-editor-preview {
-  @apply scrollbar-thin scrollbar-track-primary-light scrollbar-thumb-primary scrollbar-track-rounded-full scrollbar-thumb-rounded-full dark:scrollbar-track-primary-dark;
+  @apply scrollbar-thin scrollbar-thumb-secondary-light scrollbar-thumb-rounded-full dark:scrollbar-thumb-secondary-dark;
+}
+
+.md-editor-content-editor,
+.cm-theme {
+  @apply h-full;
+}
+
+.cm-scroller {
+  @apply flex-auto;
 }

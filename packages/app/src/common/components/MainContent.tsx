@@ -38,7 +38,7 @@ const MainContent = (): JSX.Element => {
   });
 
   return (
-    <main className="h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-track-primary-light scrollbar-thumb-primary scrollbar-track-rounded-full scrollbar-thumb-rounded-full dark:scrollbar-track-primary-dark">
+    <main className="h-[calc(100vh-4rem)] overflow-y-auto scrollbar-thin scrollbar-thumb-secondary-light scrollbar-thumb-rounded-full dark:scrollbar-thumb-secondary-dark">
       {status === 'pending' ? (
         <Loading />
       ) : status === 'rejected' ? (
@@ -52,7 +52,7 @@ const MainContent = (): JSX.Element => {
           </div>
         </motion.div>
       ) : (
-        <div className="container mx-auto px-4 py-8 sm:px-0">
+        <div className="container mx-auto px-4 py-4 sm:px-0">
           <Cells />
         </div>
       )}

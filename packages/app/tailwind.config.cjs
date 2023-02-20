@@ -7,11 +7,11 @@ module.exports = {
     colors: {
       black: '#000',
       white: '#fff',
-      primary: { dark: '#036A96', DEFAULT: '#0EA7E9', light: '#65C4ED' },
-      slate: { dark: '#0f172a', light: '#f1f5f9' },
-      accent: '#FFB804',
-      secondary: '#FF3404',
-      red: '#f43f5e',
+      primary: { dark: '#0EA7E9', light: '#FF8904' },
+      secondary: { dark: '#036996', light: '#FFB865' },
+      neutral: { dark: '#0f172a', light: '#f1f5f9' },
+      accent: { dark: '#FFE004', light: '#F70466' },
+      red: '#ef4444',
     },
     fontFamily: {
       cursive: ['Dr Sugiyama', 'cursive'],

@@ -30,7 +30,7 @@ const Cells = (): JSX.Element => {
           >
             <MarkdownEditorProvider isActive={type === 'markdown'}>
               <article className="overflow-hidden rounded-lg shadow-md">
-                <header className="flex h-12 items-center justify-between bg-primary-light px-4 transition-colors dark:bg-primary-dark">
+                <header className="flex h-12 items-center justify-between bg-secondary-light px-4 transition-colors dark:bg-secondary-dark">
                   <CellActionButton cellId={id} action="formatCellContent" />
                   <div className="flex gap-1">
                     <CellActionButton cellId={id} action="moveCellUp" />
