@@ -1,6 +1,6 @@
 {
   "name": "@codui/cli",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "packageManager": "yarn@3.4.1",
   "license": "MIT",
   "description": "Launch a JavaScript code and markdown editing environment in your browser.",

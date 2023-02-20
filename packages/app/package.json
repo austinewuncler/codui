@@ -3,7 +3,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@codemirror/lang-javascript": "^6.1.4",
-    "@codemirror/view": "^6.9.0",
+    "@codemirror/view": "^6.9.1",
     "@codui/eslint-config-react": "workspace:^",
     "@codui/tsconfig": "workspace:^",
     "@heroicons/react": "^2.0.16",

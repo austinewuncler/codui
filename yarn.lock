@@ -32,7 +32,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.9.2":
+"@babel/runtime@npm:^7.12.1, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.9.2":
   version: 7.20.13
   resolution: "@babel/runtime@npm:7.20.13"
   dependencies:
@@ -41,7 +41,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.21.0":
+"@babel/runtime@npm:^7.17.2, @babel/runtime@npm:^7.18.6, @babel/runtime@npm:^7.21.0":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
@@ -50,24 +50,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@codemirror/autocomplete@npm:^6.0.0":
-  version: 6.4.1
-  resolution: "@codemirror/autocomplete@npm:6.4.1"
-  dependencies:
-    "@codemirror/language": ^6.0.0
-    "@codemirror/state": ^6.0.0
-    "@codemirror/view": ^6.6.0
-    "@lezer/common": ^1.0.0
-  peerDependencies:
-    "@codemirror/language": ^6.0.0
-    "@codemirror/state": ^6.0.0
-    "@codemirror/view": ^6.0.0
-    "@lezer/common": ^1.0.0
-  checksum: db2809092e9cc6928a420667dec7d6ceb790c495a85fb136071f8e7f2ab15a26eb1f48de41151e2a94b1ec0117d5ae949896f45b2b2c9bbc4b3dc836b9783967
-  languageName: node
-  linkType: hard
-
-"@codemirror/autocomplete@npm:^6.3.2":
+"@codemirror/autocomplete@npm:^6.0.0, @codemirror/autocomplete@npm:^6.3.2":
   version: 6.4.2
   resolution: "@codemirror/autocomplete@npm:6.4.2"
   dependencies:
@@ -331,25 +314,25 @@ __metadata:
   linkType: hard
 
 "@codemirror/theme-one-dark@npm:^6.0.0":
-  version: 6.1.0
-  resolution: "@codemirror/theme-one-dark@npm:6.1.0"
+  version: 6.1.1
+  resolution: "@codemirror/theme-one-dark@npm:6.1.1"
   dependencies:
     "@codemirror/language": ^6.0.0
     "@codemirror/state": ^6.0.0
     "@codemirror/view": ^6.0.0
     "@lezer/highlight": ^1.0.0
-  checksum: 7454742006f0ea23ed36b1c8e232d55bd1cdf6cd3c9b5ad7f7212a4b5fe7907eecaeb1d908fed2022c2ca5d667176c93e9f071c939d54449cfe740dc028a16d8
+  checksum: e314033c77732deb6eddb44d5e43d134842dd4e174f0525161f90edb0fd4fa93e482710b7371e3ed573645b8e0c402d518d5cdae41867546cd7e2ccee8da455e
   languageName: node
   linkType: hard
 
-"@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.2.2, @codemirror/view@npm:^6.6.0, @codemirror/view@npm:^6.9.0":
-  version: 6.9.0
-  resolution: "@codemirror/view@npm:6.9.0"
+"@codemirror/view@npm:^6.0.0, @codemirror/view@npm:^6.2.2, @codemirror/view@npm:^6.6.0, @codemirror/view@npm:^6.9.1":
+  version: 6.9.1
+  resolution: "@codemirror/view@npm:6.9.1"
   dependencies:
     "@codemirror/state": ^6.1.4
     style-mod: ^4.0.0
     w3c-keyname: ^2.2.4
-  checksum: c68b928220ab01a917d03e79aee2291b9ce524bb2bc5482354c7adb8ca7ba82ad2877283477a135eb09a239b9905985bb10eb91a2f9d0cb82739b4a97dc2ea2e
+  checksum: 485d54d338a27ebde6bec489e3008db80a2a801fe27db0d4a3c70181c8739f806f035855ba13d5b311d186ad2b130db07196e8b465ec102b0142df0689bff2f8
   languageName: node
   linkType: hard
 
@@ -358,7 +341,7 @@ __metadata:
   resolution: "@codui/app@workspace:packages/app"
   dependencies:
     "@codemirror/lang-javascript": ^6.1.4
-    "@codemirror/view": ^6.9.0
+    "@codemirror/view": ^6.9.1
     "@codui/eslint-config-react": "workspace:^"
     "@codui/server": "workspace:^"
     "@codui/tsconfig": "workspace:^"
@@ -3436,7 +3419,7 @@ __metadata:
     "@babel/runtime": ^7.21.0
     "@codemirror/commands": ^6.2.1
     "@codemirror/state": ^6.2.0
-    "@codemirror/view": ^6.9.0
+    "@codemirror/view": ^6.9.1
     "@lezer/common": ^1.0.2
     "@lezer/highlight": ^1.1.3
     concurrently: ^7.6.0
