@@ -1,6 +1,6 @@
 {
   "name": "@codui/cli",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "packageManager": "yarn@3.4.1",
   "license": "MIT",
   "description": "Launch a JavaScript code and markdown editing environment in your browser.",
@@ -60,6 +60,6 @@
   "scripts": {
     "lint": "eslint .",
     "dev": "ts-node-dev ./src/index.ts",
-    "build": "rimraf dist && esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
+    "build": "rimraf dist && esbuild src/index.ts --platform=node --outfile=dist/index.js --external:@codui/app --bundle --minify --define:process.env.NODE_ENV=\\\"production\\\""
   }
 }

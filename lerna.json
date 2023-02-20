@@ -1,6 +1,6 @@
 {
   "useWorkspaces": true,
-  "version": "1.0.4",
+  "version": "1.0.7",
   "command": {
     "publish": {
       "allowBranch": "main",
