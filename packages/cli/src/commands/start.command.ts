@@ -6,10 +6,10 @@ import { dirname, join } from 'path';
 const isProduction = process.env['NODE_ENV'] === 'production';
 const startCommand = new Command('start')
   .description('Start a new or load an existing workbook')
-  .argument('[workbook]', 'name of workbook to load', 'workbook')
+  .argument('[workbook]', 'name of workbook to run', 'workbook')
   .option(
     '-p, --port <number>',
-    'http port to run server on',
+    'http port to launch server on',
     isProduction ? '4000' : '3000'
   )
   // eslint-disable-next-line @typescript-eslint/no-misused-promises

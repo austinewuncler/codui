@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import { program } from '@commander-js/extra-typings';
 
 import { startCommand } from './commands';
