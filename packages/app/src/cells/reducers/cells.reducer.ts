@@ -10,6 +10,7 @@ import invariant from 'tiny-invariant';
 
 import type { RootState } from '~/common/store';
 
+import { defaultCells } from '../data';
 import { readCells } from '../trpc';
 import type {
   Cell,
@@ -99,7 +100,10 @@ const cellsSlice = createSlice({
       })
       .addCase(onInitializeCells.fulfilled, (state, { payload }) => {
         state.isLoading = false;
-        state.data = cellsAdapter.addMany(state.data, payload);
+        state.data = cellsAdapter.addMany(
+          state.data,
+          payload.length > 0 ? payload : defaultCells
+        );
       }),
 });
 
