@@ -11,14 +11,17 @@ const DarkThemeProvider = ({ children }: PropsWithChildren): JSX.Element => {
     [isDarkMode, toggleDarkTheme]
   );
 
+  if (isDarkMode) {
+    document.body.classList.add('dark');
+    document.body.setAttribute('data-color-mode', 'dark');
+  } else {
+    document.body.classList.remove('dark');
+    document.body.setAttribute('data-color-mode', 'light');
+  }
+
   return (
     <darkThemeContext.Provider value={context}>
-      <div
-        className={isDarkMode ? 'dark' : ''}
-        data-color-mode={isDarkMode ? 'dark' : 'light'}
-      >
-        {children}
-      </div>
+      {children}
     </darkThemeContext.Provider>
   );
 };
