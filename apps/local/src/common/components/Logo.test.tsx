@@ -10,12 +10,13 @@ import Logo from './Logo';
 describe('Logo', () => {
   it('should render', () => {
     renderWithProviders(<Logo />, {});
+
     expect(
       screen.getByRole('button', { name: '< <> </ui' })
     ).toBeInTheDocument();
   });
 
-  it('should delete all cells', async () => {
+  it('should delete all cells when clicked', async () => {
     const { click } = userEvent.setup();
 
     renderWithProviders(
@@ -36,9 +37,11 @@ describe('Logo', () => {
         },
       }
     );
+
     expect(screen.getAllByRole('article')).toBeArrayOfSize(1);
 
     await click(screen.getByRole('button', { name: '< <> </ui' }));
-    expect(screen.queryAllByRole('article')).toHaveLength(0);
+
+    expect(screen.queryByRole('article')).not.toBeInTheDocument();
   });
 });

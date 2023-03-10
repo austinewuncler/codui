@@ -1,0 +1,22 @@
+{
+  "name": "@codui/eslint-config-testing",
+  "version": "0.0.0",
+  "packageManager": "yarn@3.4.1",
+  "main": ".eslintrc.js",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "*",
+    "eslint": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-jest": "*",
+    "eslint-plugin-jest-dom": "*",
+    "eslint-plugin-jest-extended": "*",
+    "eslint-plugin-jest-formatting": "*",
+    "eslint-plugin-n": "*",
+    "eslint-plugin-promise": "*",
+    "eslint-plugin-testing-library": "*",
+    "typescript": "*"
+  },
+  "dependencies": {
+    "eslint-config-standard-with-typescript": "^34.0.0"
+  }
+}

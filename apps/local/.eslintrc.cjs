@@ -1,5 +1,5 @@
 module.exports = {
-  extends: '@codui/react',
+  extends: ['@codui/testing', '@codui/react'],
   parserOptions: {
     tsconfigRootDir: __dirname,
     project: 'tsconfig.eslint.json',
