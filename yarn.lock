@@ -489,8 +489,6 @@ __metadata:
     "@codui/eslint-config-react": "workspace:^"
     "@codui/eslint-config-testing": "workspace:^"
     "@codui/tsconfig": "workspace:^"
-    "@heroicons/react": ^2.0.16
-    "@icons-pack/react-simple-icons": ^7.1.0
     "@reduxjs/toolkit": ^1.9.3
     "@testing-library/dom": ^9.0.1
     "@testing-library/jest-dom": ^5.16.5
@@ -747,15 +745,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroicons/react@npm:^2.0.16":
-  version: 2.0.16
-  resolution: "@heroicons/react@npm:2.0.16"
-  peerDependencies:
-    react: ">= 16"
-  checksum: 1e51bfec722bfd68f27fd4f37a024141938eb4b0058c3eab073a6d1aa08cf4f6deb1e8533ca85473cb16be1d1b528e2d57b8617f8b967e66292bf243daec5dd0
-  languageName: node
-  linkType: hard
-
 "@humanwhocodes/config-array@npm:^0.11.8":
   version: 0.11.8
   resolution: "@humanwhocodes/config-array@npm:0.11.8"
@@ -785,15 +774,6 @@ __metadata:
   version: 3.0.2
   resolution: "@hutson/parse-repository-url@npm:3.0.2"
   checksum: 39992c5f183c5ca3d761d6ed9dfabcb79b5f3750bf1b7f3532e1dc439ca370138bbd426ee250fdaba460bc948e6761fbefd484b8f4f36885d71ded96138340d1
-  languageName: node
-  linkType: hard
-
-"@icons-pack/react-simple-icons@npm:^7.1.0":
-  version: 7.1.0
-  resolution: "@icons-pack/react-simple-icons@npm:7.1.0"
-  peerDependencies:
-    react: ^16.13 || ^17 || ^18
-  checksum: 848ca6294457f9e468a7b1db83ff410b91b27cd68e40dc1bc4511661e4bcdf7637b49b9c5c0648548b48b23504eeddba9868c59e7e9b9f924a8f3fbb4dbd3479
   languageName: node
   linkType: hard
 

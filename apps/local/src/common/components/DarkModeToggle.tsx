@@ -1,8 +1,8 @@
-import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 import { motion } from 'framer-motion';
 import React from 'react';
 
 import { useTheme } from '../providers';
+import { MoonIcon, SunIcon } from './icons';
 
 const DarkModeToggle = (): JSX.Element => {
   const { isDarkMode, toggleDarkMode } = useTheme();

@@ -1,13 +1,12 @@
 import { type EntityId } from '@reduxjs/toolkit';
-import React, { useCallback } from 'react';
+import React from 'react';
 
-import { JSIcon } from '~/common/components';
+import { JavaScriptIcon } from '~/common/components';
 import { useTypedDispatch } from '~/common/providers';
 
 import { type CellSyntax, onInsertCell } from '../reducer';
-import InsertCellButton from './InsertCellButton';
 
-const syntaxTuple: [CellSyntax] = ['javascript'];
+const syntaxSet = new Set<CellSyntax>(['javascript']);
 
 interface Props {
   prevCellId?: EntityId;
@@ -20,23 +19,23 @@ const InsertCell = ({
 }: Props): JSX.Element => {
   const dispatch = useTypedDispatch();
 
-  const insertCell = useCallback(
-    (syntax: CellSyntax) => {
-      dispatch(onInsertCell({ prevCellId, syntax }));
-    },
-    [dispatch, prevCellId]
-  );
-
   return (
     <div
       className={`flex justify-center transition-opacity ${
         alwaysVisible ? 'opacity-100' : 'opacity-20 hover:opacity-100'
       }`}
     >
-      {syntaxTuple.map((syntax) => (
-        <InsertCellButton key={syntax} syntax={syntax} onClick={insertCell}>
-          {syntax === 'javascript' ? <JSIcon /> : null}
-        </InsertCellButton>
+      {[...syntaxSet].map((syntax) => (
+        <button
+          key={syntax}
+          type="button"
+          title={`insert ${syntax} cell`}
+          onClick={() => dispatch(onInsertCell({ prevCellId, syntax }))}
+        >
+          {syntax === 'javascript' ? (
+            <JavaScriptIcon height={36} width={36} />
+          ) : null}
+        </button>
       ))}
     </div>
   );
