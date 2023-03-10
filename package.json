@@ -8,6 +8,7 @@
   ],
   "devDependencies": {
     "eslint": "^8.35.0",
+    "happy-dom": "^8.9.0",
     "lerna": "^6.5.1",
     "nx": "^15.8.5",
     "prettier": "^2.8.4",
@@ -16,6 +17,8 @@
   "scripts": {
     "dev": "lerna run dev",
     "build": "lerna run build",
-    "lint": "lerna run lint"
+    "lint": "lerna run lint",
+    "test": "lerna run test",
+    "test:watch": "lerna run test:watch"
   }
 }
