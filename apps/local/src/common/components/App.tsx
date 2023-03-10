@@ -7,12 +7,15 @@ import Logo from './Logo';
 const App = (): JSX.Element => {
   return (
     <ThemeProvider>
-      <header>
+      <header className="sticky inset-x-0 top-0 bg-white text-black transition-colors dark:bg-black dark:text-white">
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-0">
           <Logo />
           <DarkModeToggle />
         </div>
       </header>
+      <main className="custom-scrollbar h-[calc(100vh-4rem)] overflow-auto py-6">
+        <div className="container mx-auto px-4 sm:px-0">Main</div>
+      </main>
     </ThemeProvider>
   );
 };

@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-scrollbar {
+    @apply scrollbar-thin scrollbar-track-primary-light scrollbar-thumb-primary scrollbar-thumb-rounded-full dark:scrollbar-track-primary-dark;
+  }
+}

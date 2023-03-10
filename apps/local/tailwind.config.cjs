@@ -11,4 +11,5 @@ module.exports = {
     fontFamily: { cursive: ['Rancho', 'cursive'] },
     transitionDuration: { DEFAULT: '300ms' },
   },
+  plugins: [require('tailwind-scrollbar')({ nocompatible: true })],
 };
