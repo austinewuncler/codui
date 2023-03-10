@@ -1,5 +1,14 @@
 import React from 'react';
 
-const App = (): JSX.Element => <div>App</div>;
+import { ThemeProvider } from '../providers';
+import DarkModeToggle from './DarkModeToggle';
+
+const App = (): JSX.Element => {
+  return (
+    <ThemeProvider>
+      <DarkModeToggle />
+    </ThemeProvider>
+  );
+};
 
 export default App;
