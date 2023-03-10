@@ -35,11 +35,14 @@ const cellsSlice = createSlice({
       if (prevIndex < 0) ids.unshift(cell.id);
       else ids.splice(prevIndex + 1, 0, cell.id);
     },
+    onDeleteAllCells: ({ data }) => {
+      cellsAdapter.removeAll(data);
+    },
   },
 });
 
 export default cellsSlice.reducer;
-export const { onInsertCell } = cellsSlice.actions;
+export const { onInsertCell, onDeleteAllCells } = cellsSlice.actions;
 export const { selectAll: selectCells } = cellsAdapter.getSelectors(
   ({ cells }: RootState) => cells.data
 );
