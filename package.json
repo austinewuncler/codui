@@ -1,5 +1,11 @@
 {
   "name": "codui",
   "packageManager": "yarn@3.4.1",
-  "private": true
+  "private": true,
+  "workspaces": [
+    "libs/*"
+  ],
+  "devDependencies": {
+    "typescript": "^4.9.5"
+  }
 }
