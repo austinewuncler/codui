@@ -8,6 +8,7 @@ module.exports = {
       white: '#fff',
       primary: { dark: '#DD006C', DEFAULT: '#EC4898', light: '#F8A0CB' },
     },
+    fontFamily: { cursive: ['Rancho', 'cursive'] },
     transitionDuration: { DEFAULT: '300ms' },
   },
 };
