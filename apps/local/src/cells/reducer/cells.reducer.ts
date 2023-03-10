@@ -1,21 +1,17 @@
 import {
   createEntityAdapter,
   createSlice,
-  type EntityId,
-  type EntityState,
+  nanoid,
+  type PayloadAction,
 } from '@reduxjs/toolkit';
 
-interface Cell {
-  id: EntityId;
-  syntax: 'javascript';
-  code: string;
-}
+import { type RootState } from '~/common/providers';
 
-interface CellsState {
-  isLoading: boolean;
-  error: string | undefined;
-  data: EntityState<Cell>;
-}
+import {
+  type Cell,
+  type CellsState,
+  type InsertCellPayload,
+} from './cell.types';
 
 const cellsAdapter = createEntityAdapter<Cell>();
 
@@ -25,6 +21,25 @@ const initialState: CellsState = {
   data: cellsAdapter.getInitialState(),
 };
 
-const cellsSlice = createSlice({ name: 'cells', initialState, reducers: {} });
+const cellsSlice = createSlice({
+  name: 'cells',
+  initialState,
+  reducers: {
+    onInsertCell: ({ data }, { payload }: PayloadAction<InsertCellPayload>) => {
+      const { prevCellId, syntax } = payload;
+      const cell: Cell = { syntax, id: nanoid(), code: '' };
+      const { entities, ids } = data;
+      entities[cell.id] = cell;
+      const prevIndex = ids.findIndex((id) => id === prevCellId);
+
+      if (prevIndex < 0) ids.unshift(cell.id);
+      else ids.splice(prevIndex + 1, 0, cell.id);
+    },
+  },
+});
 
 export default cellsSlice.reducer;
+export const { onInsertCell } = cellsSlice.actions;
+export const { selectAll: selectCells } = cellsAdapter.getSelectors(
+  ({ cells }: RootState) => cells.data
+);
