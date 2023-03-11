@@ -17,9 +17,9 @@ const JavaScriptCell = (): JSX.Element => {
         enable={{ right: true }}
         handleStyles={{ right: { cursor: 'ew-resize' } }}
       >
-        <div className="h-full bg-primary-dark" />
+        <div className="h-full" />
       </Resizable>
-      <div className="flex-auto bg-primary-light" />
+      <div className="flex-auto" />
     </Resizable>
   );
 };

@@ -1,6 +1,7 @@
 import {
   createEntityAdapter,
   createSlice,
+  type EntityId,
   nanoid,
   type PayloadAction,
 } from '@reduxjs/toolkit';
@@ -35,6 +36,9 @@ const cellsSlice = createSlice({
       if (prevIndex < 0) ids.unshift(cell.id);
       else ids.splice(prevIndex + 1, 0, cell.id);
     },
+    onDeleteCell: ({ data }, { payload }: PayloadAction<EntityId>) => {
+      cellsAdapter.removeOne(data, payload);
+    },
     onDeleteAllCells: ({ data }) => {
       cellsAdapter.removeAll(data);
     },
@@ -42,7 +46,8 @@ const cellsSlice = createSlice({
 });
 
 export default cellsSlice.reducer;
-export const { onInsertCell, onDeleteAllCells } = cellsSlice.actions;
+export const { onInsertCell, onDeleteCell, onDeleteAllCells } =
+  cellsSlice.actions;
 export const { selectAll: selectCells } = cellsAdapter.getSelectors(
   ({ cells }: RootState) => cells.data
 );
