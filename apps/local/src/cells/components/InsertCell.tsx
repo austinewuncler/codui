@@ -32,7 +32,9 @@ const InsertCell = ({
           <button
             key={syntax}
             type="button"
-            title={`insert ${syntax} cell`}
+            title={`insert ${syntax} cell${
+              prevCellId != null ? ` after ${prevCellId}` : ''
+            }`}
             onClick={() => dispatch(onInsertCell({ prevCellId, syntax }))}
           >
             {syntaxIcons[syntax]}

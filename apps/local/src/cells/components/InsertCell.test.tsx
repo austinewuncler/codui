@@ -13,11 +13,11 @@ describe('InsertCell', () => {
 
     expect(screen.queryByRole('article')).not.toBeInTheDocument();
 
-    const insertCell = screen.getByRole('button', {
-      name: 'insert javascript cell',
-    });
-
-    await click(insertCell);
+    await click(
+      screen.getByRole('button', {
+        name: 'insert javascript cell',
+      })
+    );
 
     await waitFor(() => {
       expect(screen.getAllByRole('article')).toBeArrayOfSize(1);
