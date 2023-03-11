@@ -6,8 +6,6 @@
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "eslint.nodePath": ".yarn/sdks",
-  "conventionalCommits.scopes": [
-    "local"
-  ],
+  "conventionalCommits.scopes": ["local", "editor"],
   "prettier.prettierPath": ".yarn/sdks/prettier/index.js"
 }

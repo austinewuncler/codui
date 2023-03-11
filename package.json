@@ -4,14 +4,15 @@
   "private": true,
   "workspaces": [
     "apps/*",
-    "libs/*"
+    "libs/*",
+    "packages/*"
   ],
   "devDependencies": {
     "@vitest/coverage-c8": "^0.29.2",
-    "eslint": "^8.35.0",
+    "eslint": "^8.36.0",
     "happy-dom": "^8.9.0",
     "lerna": "^6.5.1",
-    "nx": "^15.8.5",
+    "nx": "^15.8.6",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
     "vitest": "^0.29.2"

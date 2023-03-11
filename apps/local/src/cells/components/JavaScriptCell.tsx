@@ -1,6 +1,8 @@
 import { Resizable } from 're-resizable';
 import React from 'react';
 
+import CodeEditor from './CodeEditor';
+
 const JavaScriptCell = (): JSX.Element => {
   return (
     <Resizable
@@ -17,7 +19,7 @@ const JavaScriptCell = (): JSX.Element => {
         enable={{ right: true }}
         handleStyles={{ right: { cursor: 'ew-resize' } }}
       >
-        <div className="h-full" />
+        <CodeEditor />
       </Resizable>
       <div className="flex-auto" />
     </Resizable>
