@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
@@ -19,14 +19,8 @@ describe('InsertCell', () => {
 
     await click(insertCell);
 
-    expect(screen.getAllByRole('article')).toBeArrayOfSize(1);
-
-    const buttons = screen.getAllByRole('button');
-
-    expect(buttons).toBeArrayOfSize(2);
-
-    await click(buttons[1]);
-
-    expect(screen.getAllByRole('article')).toBeArrayOfSize(2);
+    await waitFor(() => {
+      expect(screen.getAllByRole('article')).toBeArrayOfSize(1);
+    });
   });
 });

@@ -23,3 +23,5 @@ export interface MoveCellPayload {
   cellId: EntityId;
   direction: 'up' | 'down';
 }
+
+export type CellAction = 'moveCellUp' | 'moveCellDown' | 'deleteCell';

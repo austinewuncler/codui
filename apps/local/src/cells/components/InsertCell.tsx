@@ -1,5 +1,5 @@
 import { type EntityId } from '@reduxjs/toolkit';
-import React, { type ComponentPropsWithoutRef } from 'react';
+import React from 'react';
 
 import { JavaScriptIcon } from '~/common/components';
 import { useTypedDispatch } from '~/common/providers';
@@ -17,11 +17,8 @@ const InsertCell = ({
 }: Props): JSX.Element => {
   const dispatch = useTypedDispatch();
 
-  const syntaxIcons: Record<
-    CellSyntax,
-    (props: ComponentPropsWithoutRef<'svg'>) => JSX.Element
-  > = {
-    javascript: JavaScriptIcon,
+  const syntaxIcons: Record<CellSyntax, JSX.Element> = {
+    javascript: <JavaScriptIcon height={36} width={36} />,
   };
 
   return (
@@ -30,24 +27,18 @@ const InsertCell = ({
         alwaysVisible ? 'opacity-100' : 'opacity-20 hover:opacity-100'
       }`}
     >
-      {Object.keys(syntaxIcons).map((syntax) => {
-        const Icon = syntaxIcons[syntax as CellSyntax];
-
-        return (
+      {(Object.keys(syntaxIcons) as Array<keyof typeof syntaxIcons>).map(
+        (syntax) => (
           <button
             key={syntax}
             type="button"
             title={`insert ${syntax} cell`}
-            onClick={() =>
-              dispatch(
-                onInsertCell({ prevCellId, syntax: syntax as CellSyntax })
-              )
-            }
+            onClick={() => dispatch(onInsertCell({ prevCellId, syntax }))}
           >
-            <Icon height={36} width={36} />
+            {syntaxIcons[syntax]}
           </button>
-        );
-      })}
+        )
+      )}
     </div>
   );
 };
