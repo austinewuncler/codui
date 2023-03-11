@@ -26,7 +26,7 @@ const CellList = (): JSX.Element => {
             exit={{ scale: 0, opacity: 0 }}
             className="flex flex-col gap-4"
           >
-            <article className="shadow-md">
+            <article className="shadow-md" title={`cell-${id}`}>
               <header className="flex h-10 justify-end bg-neutral-light px-4 dark:bg-neutral-dark">
                 <CellActions cellId={id} />
               </header>

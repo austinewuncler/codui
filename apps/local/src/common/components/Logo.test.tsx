@@ -28,9 +28,9 @@ describe('Logo', () => {
       { preloadedState: { cells } }
     );
 
-    expect(screen.getAllByRole('article')).toBeInTheDocument();
+    expect(screen.getByRole('article')).toBeInTheDocument();
 
-    await click(screen.getByRole('button', { name: 'codui' }));
+    await click(screen.getByRole('button', { name: '< <> </ui' }));
     await waitForElementToBeRemoved(() => screen.queryByRole('article'));
 
     expect(screen.queryByRole('article')).not.toBeInTheDocument();

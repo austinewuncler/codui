@@ -51,7 +51,7 @@ const CellActions = ({ cellId }: Props): JSX.Element => {
         <button
           key={actionType}
           type="button"
-          title={actionType}
+          title={`${actionType}(${cellId})`}
           className="grid aspect-square place-content-center"
           onClick={action}
         >
