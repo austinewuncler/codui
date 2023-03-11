@@ -4,7 +4,7 @@ import React from 'react';
 import { useTypedSelector } from '~/common/providers';
 
 import { selectCells } from '../reducer';
-import CellHeader from './CellHeader';
+import CellActions from './CellActions';
 import InsertCell from './InsertCell';
 import JavaScriptCell from './JavaScriptCell';
 
@@ -27,7 +27,9 @@ const CellList = (): JSX.Element => {
             className="flex flex-col gap-4"
           >
             <article className="shadow-md">
-              <CellHeader cellId={id} />
+              <header className="flex h-10 justify-end bg-neutral-light px-4 dark:bg-neutral-dark">
+                <CellActions cellId={id} />
+              </header>
               <JavaScriptCell />
             </article>
             <InsertCell prevCellId={id} />

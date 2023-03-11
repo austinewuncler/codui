@@ -14,7 +14,7 @@ interface Props {
   cellId: EntityId;
 }
 
-const CellHeader = ({ cellId }: Props): JSX.Element => {
+const CellActions = ({ cellId }: Props): JSX.Element => {
   const dispatch = useTypedDispatch();
 
   const actionMap: Record<
@@ -42,7 +42,7 @@ const CellHeader = ({ cellId }: Props): JSX.Element => {
   };
 
   return (
-    <header className="flex h-10 justify-end gap-2 bg-neutral-light px-4 dark:bg-neutral-dark">
+    <div className="flex gap-1">
       {(
         Object.entries(actionMap) as Array<
           [CellAction, typeof actionMap.deleteCell]
@@ -58,8 +58,8 @@ const CellHeader = ({ cellId }: Props): JSX.Element => {
           {icon}
         </button>
       ))}
-    </header>
+    </div>
   );
 };
 
-export default CellHeader;
+export default CellActions;
