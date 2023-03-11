@@ -18,3 +18,8 @@ export interface InsertCellPayload {
   prevCellId: EntityId | undefined;
   syntax: CellSyntax;
 }
+
+export interface MoveCellPayload {
+  cellId: EntityId;
+  direction: 'up' | 'down';
+}
