@@ -15,7 +15,8 @@ const DarkModeToggle = (): JSX.Element => {
       onClick={toggleDarkMode}
     >
       <div
-        className={`grid h-6 w-6 place-content-center rounded-full text-white transition-all ${
+        data-testid="sun-icon"
+        className={`grid h-6 w-6 place-content-center text-white transition-all ${
           isDarkMode
             ? 'translate-x-0 rotate-0 opacity-100'
             : '-translate-x-full -rotate-180 opacity-0'
@@ -24,7 +25,8 @@ const DarkModeToggle = (): JSX.Element => {
         <SunIcon className="h-4 w-4" />
       </div>
       <div
-        className={`grid h-6 w-6 place-content-center rounded-full text-black transition-all ${
+        data-testid="moon-icon"
+        className={`grid h-6 w-6 place-content-center text-black transition-all ${
           isDarkMode
             ? 'translate-x-full rotate-180 opacity-0'
             : 'translate-x-0 rotate-0 opacity-100'
@@ -33,6 +35,7 @@ const DarkModeToggle = (): JSX.Element => {
         <MoonIcon className="h-4 w-4" />
       </div>
       <div
+        data-testid="toggle"
         className={`absolute inset-0 flex rounded-full p-1  ${
           isDarkMode ? 'justify-end' : 'justify-start'
         }`}

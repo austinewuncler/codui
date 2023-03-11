@@ -8,14 +8,6 @@ import { renderWithProviders } from '~/utils';
 import Logo from './Logo';
 
 describe('Logo', () => {
-  it('should render', () => {
-    renderWithProviders(<Logo />, {});
-
-    expect(
-      screen.getByRole('button', { name: '< <> </ui' })
-    ).toBeInTheDocument();
-  });
-
   it('should delete all cells when clicked', async () => {
     const { click } = userEvent.setup();
 

@@ -501,6 +501,7 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^5.54.1
     "@typescript-eslint/parser": ^5.54.1
     "@vitejs/plugin-react-swc": ^3.2.0
+    "@vitest/coverage-c8": ^0.29.2
     autoprefixer: ^10.4.14
     eslint: ^8.35.0
     eslint-plugin-import: ^2.27.5
@@ -797,7 +798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@istanbuljs/schema@npm:^0.1.2":
+"@istanbuljs/schema@npm:^0.1.2, @istanbuljs/schema@npm:^0.1.3":
   version: 0.1.3
   resolution: "@istanbuljs/schema@npm:0.1.3"
   checksum: 5282759d961d61350f33d9118d16bcaed914ebf8061a52f4fa474b2cb08720c9c81d165e13b82f2e5a8a212cc5af482f0c6fc1ac27b9e067e5394c9a6ed186c9
@@ -2244,6 +2245,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vitest/coverage-c8@npm:^0.29.2":
+  version: 0.29.2
+  resolution: "@vitest/coverage-c8@npm:0.29.2"
+  dependencies:
+    c8: ^7.13.0
+    picocolors: ^1.0.0
+    std-env: ^3.3.1
+  peerDependencies:
+    vitest: ">=0.29.0 <1"
+  checksum: 791921e492931864e7a969a4ab7897e551080d68093a3ff4798c98b628c8f27268fad9ba8997f37e9302154a3b36032a0709e2fe8d4b8c00a42d1d453ef1497b
+  languageName: node
+  linkType: hard
+
 "@vitest/expect@npm:0.29.2":
   version: 0.29.2
   resolution: "@vitest/expect@npm:0.29.2"
@@ -2956,6 +2970,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"c8@npm:^7.13.0":
+  version: 7.13.0
+  resolution: "c8@npm:7.13.0"
+  dependencies:
+    "@bcoe/v8-coverage": ^0.2.3
+    "@istanbuljs/schema": ^0.1.3
+    find-up: ^5.0.0
+    foreground-child: ^2.0.0
+    istanbul-lib-coverage: ^3.2.0
+    istanbul-lib-report: ^3.0.0
+    istanbul-reports: ^3.1.4
+    rimraf: ^3.0.2
+    test-exclude: ^6.0.0
+    v8-to-istanbul: ^9.0.0
+    yargs: ^16.2.0
+    yargs-parser: ^20.2.9
+  bin:
+    c8: bin/c8.js
+  checksum: 491abf4cf3097cdcfd24dbac49162f1383861c22c77fdd9280bcd38240e1e07d2c6a59da5d4df59a61a8204e2fc297d31fd526e495faf8d2f20dcc12a37b144c
+  languageName: node
+  linkType: hard
+
 "cac@npm:^6.7.14":
   version: 6.7.14
   resolution: "cac@npm:6.7.14"
@@ -3276,12 +3312,14 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "codui@workspace:."
   dependencies:
+    "@vitest/coverage-c8": ^0.29.2
     eslint: ^8.35.0
     happy-dom: ^8.9.0
     lerna: ^6.5.1
     nx: ^15.8.5
     prettier: ^2.8.4
     typescript: ^4.9.5
+    vitest: ^0.29.2
   languageName: unknown
   linkType: soft
 
@@ -3541,7 +3579,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2, cross-spawn@npm:^7.0.3":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:
@@ -4862,6 +4900,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"foreground-child@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "foreground-child@npm:2.0.0"
+  dependencies:
+    cross-spawn: ^7.0.0
+    signal-exit: ^3.0.2
+  checksum: f77ec9aff621abd6b754cb59e690743e7639328301fbea6ff09df27d2befaf7dd5b77cec51c32323d73a81a7d91caaf9413990d305cbe3d873eec4fe58960956
+  languageName: node
+  linkType: hard
+
 "form-data@npm:^4.0.0":
   version: 4.0.0
   resolution: "form-data@npm:4.0.0"
@@ -6081,7 +6129,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"istanbul-reports@npm:^3.1.3":
+"istanbul-reports@npm:^3.1.3, istanbul-reports@npm:^3.1.4":
   version: 3.1.5
   resolution: "istanbul-reports@npm:3.1.5"
   dependencies:
@@ -10178,7 +10226,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"v8-to-istanbul@npm:^9.0.1":
+"v8-to-istanbul@npm:^9.0.0, v8-to-istanbul@npm:^9.0.1":
   version: 9.1.0
   resolution: "v8-to-istanbul@npm:9.1.0"
   dependencies:
@@ -10595,7 +10643,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3":
+"yargs-parser@npm:^20.2.2, yargs-parser@npm:^20.2.3, yargs-parser@npm:^20.2.9":
   version: 20.2.9
   resolution: "yargs-parser@npm:20.2.9"
   checksum: 8bb69015f2b0ff9e17b2c8e6bfe224ab463dd00ca211eece72a4cd8a906224d2703fb8a326d36fdd0e68701e201b2a60ed7cf81ce0fd9b3799f9fe7745977ae3
