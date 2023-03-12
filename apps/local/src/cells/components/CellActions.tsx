@@ -42,7 +42,7 @@ const CellActions = ({ cellId }: Props): JSX.Element => {
   };
 
   return (
-    <div className="flex gap-1">
+    <div className="flex h-full gap-1">
       {(
         Object.entries(actionMap) as Array<
           [CellAction, typeof actionMap.deleteCell]

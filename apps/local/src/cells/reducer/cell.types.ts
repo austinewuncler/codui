@@ -1,6 +1,7 @@
+import { type Language } from '@codui/editor';
 import { type EntityId, type EntityState } from '@reduxjs/toolkit';
 
-export type CellSyntax = 'javascript';
+export type CellSyntax = Language;
 
 export interface Cell {
   id: EntityId;

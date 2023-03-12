@@ -13,13 +13,14 @@ const JavaScriptCell = (): JSX.Element => {
       handleStyles={{ bottom: { cursor: 'ns-resize' } }}
     >
       <Resizable
+        className="border-r border-neutral-light transition-all dark:border-neutral-dark"
         defaultSize={{ width: '50%', height: 'auto' }}
         minWidth="25%"
         maxWidth="75%"
         enable={{ right: true }}
         handleStyles={{ right: { cursor: 'ew-resize' } }}
       >
-        <CodeEditor />
+        <CodeEditor syntax="javascript" />
       </Resizable>
       <div className="flex-auto" />
     </Resizable>

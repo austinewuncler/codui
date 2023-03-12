@@ -1,10 +1,18 @@
 import { useCodeEditor } from '@codui/editor';
-import React from 'react';
+import React, { useRef } from 'react';
 
-const CodeEditor = (): JSX.Element => {
-  useCodeEditor();
+import { type CellSyntax } from '../reducer';
 
-  return <div className="h-full" />;
+interface Props {
+  syntax: CellSyntax;
+}
+
+const CodeEditor = ({ syntax }: Props): JSX.Element => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useCodeEditor({ ref, language: syntax });
+
+  return <div ref={ref} className="h-full" />;
 };
 
 export default CodeEditor;
