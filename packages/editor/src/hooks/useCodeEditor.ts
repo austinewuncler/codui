@@ -2,18 +2,22 @@ import { javascript } from '@codemirror/lang-javascript';
 import { type Extension } from '@codemirror/state';
 import { type RefObject } from 'react';
 
-import { type Language } from '../types';
+import { lightTheme } from '../themes';
+import { type Language, type Theme } from '../types';
 import useCodeMirror from './useCodeMirror';
 
 interface Props {
   ref: RefObject<HTMLDivElement>;
   language: Language;
+  theme?: Theme;
 }
 
-const useCodeEditor = ({ language, ref }: Props): void => {
+const useCodeEditor = ({ language, ref, theme = 'light' }: Props): void => {
   const extensions: Extension[] = [];
 
   if (language === 'javascript') extensions.push(javascript({ jsx: true }));
+
+  if (theme === 'light') extensions.push(lightTheme);
 
   useCodeMirror(ref, extensions);
 };
