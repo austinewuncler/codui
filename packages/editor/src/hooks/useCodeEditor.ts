@@ -2,7 +2,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import { type Extension } from '@codemirror/state';
 import { type RefObject } from 'react';
 
-import { lightTheme } from '../themes';
+import { darkTheme, lightTheme } from '../themes';
 import { type Language, type Theme } from '../types';
 import useCodeMirror from './useCodeMirror';
 
@@ -18,6 +18,7 @@ const useCodeEditor = ({ language, ref, theme = 'light' }: Props): void => {
   if (language === 'javascript') extensions.push(javascript({ jsx: true }));
 
   if (theme === 'light') extensions.push(lightTheme);
+  else extensions.push(darkTheme);
 
   useCodeMirror(ref, extensions);
 };
