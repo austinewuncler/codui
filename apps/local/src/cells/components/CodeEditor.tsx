@@ -13,11 +13,7 @@ const CodeEditor = ({ syntax }: Props): JSX.Element => {
   const ref = useRef<HTMLDivElement>(null);
   const { isDarkMode } = useTheme();
 
-  useCodeEditor({
-    ref,
-    language: syntax,
-    theme: isDarkMode ? 'dark' : 'light',
-  });
+  useCodeEditor({ ref, language: syntax, isDarkMode });
 
   return <div ref={ref} className="h-full" />;
 };

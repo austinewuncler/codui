@@ -2,7 +2,7 @@ import { indentWithTab } from '@codemirror/commands';
 import { EditorState, type Extension } from '@codemirror/state';
 import { keymap } from '@codemirror/view';
 import { basicSetup, EditorView } from 'codemirror';
-import { type RefObject } from 'react';
+import { type RefObject, useState } from 'react';
 import { useEffectOnce } from 'usehooks-ts';
 
 import { baseTheme } from '../themes';
@@ -11,26 +11,28 @@ const useCodeMirror = (
   ref: RefObject<HTMLDivElement>,
   extensions: Extension[] = []
 ): void => {
-  useEffectOnce(() => {
-    const state = EditorState.create({
-      extensions: [
-        baseTheme,
-        basicSetup,
-        keymap.of([indentWithTab]),
-        EditorView.lineWrapping,
-        ...extensions,
-      ],
-    });
-    let view: EditorView;
+  const [view, setView] = useState<EditorView>();
 
-    if (ref.current != null)
-      view = new EditorView({
-        state,
+  useEffectOnce(() => {
+    if (ref.current != null) {
+      const view = new EditorView({
+        state: EditorState.create({
+          extensions: [
+            baseTheme,
+            basicSetup,
+            keymap.of([indentWithTab]),
+            EditorView.lineWrapping,
+            ...extensions,
+          ],
+        }),
         parent: ref.current,
       });
+      setView(view);
+    }
 
     return () => {
-      view.destroy();
+      view?.destroy();
+      setView(undefined);
     };
   });
 };
