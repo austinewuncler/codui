@@ -4,6 +4,8 @@ import { basicSetup, EditorView } from 'codemirror';
 import { type RefObject } from 'react';
 import { useEffectOnce } from 'usehooks-ts';
 
+import { baseTheme } from '../themes';
+
 interface Props {
   ref: RefObject<HTMLDivElement>;
 }
@@ -14,7 +16,7 @@ const useCodeEditor = ({ ref }: Props): void => {
     if (ref.current != null) {
       view = new EditorView({
         state: EditorState.create({
-          extensions: [basicSetup, javascript({ jsx: true })],
+          extensions: [basicSetup, javascript({ jsx: true }), baseTheme],
         }),
         parent: ref.current,
       });
