@@ -7,7 +7,7 @@ export default mergeConfig(
   viteConfig,
   defineConfig({
     test: {
-      include: ['**/*.test.{ts,tsx}'],
+      include: ['src/**/*.test.{ts,tsx}'],
       globals: true,
       environment: 'happy-dom',
       setupFiles: ['jest-extended/all', 'src/testSetup.ts'],
