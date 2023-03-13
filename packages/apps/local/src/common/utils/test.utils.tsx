@@ -4,7 +4,12 @@ import { type PropsWithChildren, type ReactElement } from 'react';
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import { type AppStore, type RootState, setupStore } from '../providers';
+import {
+  type AppStore,
+  type RootState,
+  setupStore,
+  ThemeProvider,
+} from '../providers';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>;
@@ -21,7 +26,9 @@ export const renderWithProviders = (
   }: ExtendedRenderOptions = {}
 ) => {
   const Wrapper = ({ children }: PropsWithChildren): JSX.Element => (
-    <Provider store={store}>{children}</Provider>
+    <ThemeProvider>
+      <Provider store={store}>{children}</Provider>
+    </ThemeProvider>
   );
 
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };

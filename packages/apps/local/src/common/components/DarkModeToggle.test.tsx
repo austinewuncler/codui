@@ -1,12 +1,13 @@
-import { render, screen } from '@testing-library/react';
+import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
+import { renderWithProviders } from '../utils';
 import DarkModeToggle from './DarkModeToggle';
 
 describe('DarkModeToggle', () => {
   it('should render', () => {
-    render(<DarkModeToggle />);
+    renderWithProviders(<DarkModeToggle />);
 
     expect(
       screen.getByRole('button', { name: 'dark mode toggle' })
@@ -15,7 +16,7 @@ describe('DarkModeToggle', () => {
 
   it('toggles dark when clicked', async () => {
     const { click } = userEvent.setup();
-    render(<DarkModeToggle />);
+    renderWithProviders(<DarkModeToggle />);
 
     expect(screen.getByTestId('toggle')).toHaveClass('justify-start');
 
@@ -25,5 +26,9 @@ describe('DarkModeToggle', () => {
     await click(darkModeToggleButton);
 
     expect(screen.getByTestId('toggle')).toHaveClass('justify-end');
+
+    await click(darkModeToggleButton);
+
+    expect(screen.getByTestId('toggle')).toHaveClass('justify-start');
   });
 });

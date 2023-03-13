@@ -1,18 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import { useTheme } from '../providers';
 import { MoonIcon, SunIcon } from './icons';
 
 const DarkModeToggle = (): JSX.Element => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const { isDarkMode, toggleDarkMode } = useTheme();
 
   return (
     <button
       type="button"
       title="dark mode toggle"
       className="relative flex rounded-full bg-primary-light p-1 shadow-inner"
-      onClick={() => {
-        setIsDarkMode((prev) => !prev);
-      }}
+      onClick={toggleDarkMode}
     >
       <div className="p-1">
         <SunIcon className="h-4 w-4" />
