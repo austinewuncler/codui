@@ -1,8 +1,17 @@
 import React from 'react';
 
+import { removeAllCells } from '~/cells/reducer';
+
+import { useTypedDispatch } from '../providers';
+
 const Logo = (): JSX.Element => {
+  const dispatch = useTypedDispatch();
+
   return (
-    <button className="font-cursive text-5xl">
+    <button
+      className="font-cursive text-5xl"
+      onClick={() => dispatch(removeAllCells())}
+    >
       &lt;<span className="text-primary">&lt;&gt;</span>&lt;&#47;ui
     </button>
   );

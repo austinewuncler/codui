@@ -10,7 +10,7 @@ export default mergeConfig(
       include: ['**/*.test.{ts,tsx}'],
       globals: true,
       environment: 'happy-dom',
-      setupFiles: ['src/testSetup.ts'],
+      setupFiles: ['jest-extended/all', 'src/testSetup.ts'],
     },
   })
 );
