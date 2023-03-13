@@ -1,5 +1,15 @@
 import React from 'react';
 
-const App = (): JSX.Element => <div>App</div>;
+import Logo from './Logo';
+
+const App = (): JSX.Element => (
+  <>
+    <header className="sticky inset-x-0 top-0 bg-white">
+      <div className="container mx-auto flex h-16 items-center">
+        <Logo />
+      </div>
+    </header>
+  </>
+);
 
 export default App;
