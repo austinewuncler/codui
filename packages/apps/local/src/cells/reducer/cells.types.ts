@@ -12,3 +12,8 @@ export interface CellsState {
   error: string | undefined;
   data: EntityState<Cell>;
 }
+
+export interface InsertCellPayload {
+  prevCellId: EntityId | undefined;
+  language: Language;
+}
