@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react';
+import { screen, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 
@@ -43,6 +43,8 @@ describe('Logo', () => {
     expect(screen.getAllByRole('article')).toBeArrayOfSize(2);
 
     await click(screen.getByRole('button', { name: '< <> </ui' }));
+
+    await waitForElementToBeRemoved(() => screen.queryAllByRole('article'));
 
     expect(screen.queryByRole('article')).not.toBeInTheDocument();
   });

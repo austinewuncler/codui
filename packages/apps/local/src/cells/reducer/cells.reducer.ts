@@ -1,6 +1,7 @@
 import {
   createEntityAdapter,
   createSlice,
+  type EntityId,
   nanoid,
   type PayloadAction,
 } from '@reduxjs/toolkit';
@@ -11,6 +12,7 @@ import {
   type Cell,
   type CellsState,
   type InsertCellPayload,
+  type MoveCellPayload,
 } from './cells.types';
 
 const cellsAdapter = createEntityAdapter<Cell>();
@@ -38,10 +40,25 @@ const cellsSlice = createSlice({
       if (prevIndex < 0) ids.unshift(cell.id);
       else ids.splice(prevIndex + 1, 0, cell.id);
     },
+    onMoveCell: ({ data }, { payload }: PayloadAction<MoveCellPayload>) => {
+      const { cellId, direction } = payload;
+      const { ids } = data;
+      const srcIndex = ids.findIndex((id) => id === cellId);
+      const destIndex = srcIndex + (direction === 'up' ? -1 : 1);
+
+      if (destIndex >= 0 && destIndex < ids.length) {
+        ids[srcIndex] = ids[destIndex];
+        ids[destIndex] = cellId;
+      }
+    },
+    onRemoveCell: ({ data }, { payload }: PayloadAction<EntityId>) => {
+      cellsAdapter.removeOne(data, payload);
+    },
   },
 });
 export default cellsSlice.reducer;
 export const { selectAll: selectCells } = cellsAdapter.getSelectors(
   ({ cells }: RootState) => cells.data
 );
-export const { onRemoveAllCells, onInsertCell } = cellsSlice.actions;
+export const { onRemoveAllCells, onInsertCell, onMoveCell, onRemoveCell } =
+  cellsSlice.actions;

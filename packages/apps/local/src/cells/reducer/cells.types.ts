@@ -17,3 +17,10 @@ export interface InsertCellPayload {
   prevCellId: EntityId | undefined;
   language: Language;
 }
+
+export interface MoveCellPayload {
+  cellId: EntityId;
+  direction: 'up' | 'down';
+}
+
+export type CellAction = 'moveCellUp' | 'moveCellDown' | 'removeCell';
