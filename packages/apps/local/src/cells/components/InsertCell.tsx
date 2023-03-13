@@ -8,13 +8,21 @@ import { onInsertCell } from '../reducer';
 
 interface Props {
   prevCellId?: EntityId;
+  alwaysVisible?: boolean;
 }
 
-const InsertCell = ({ prevCellId }: Props): JSX.Element => {
+const InsertCell = ({
+  prevCellId,
+  alwaysVisible = false,
+}: Props): JSX.Element => {
   const dispatch = useTypedDispatch();
 
   return (
-    <div className="flex justify-center">
+    <div
+      className={`flex justify-center transition-opacity ${
+        alwaysVisible ? 'opacity-100' : 'opacity-20 hover:opacity-100'
+      }`}
+    >
       <button
         type="button"
         title={`insert javascript cell${

@@ -11,7 +11,7 @@ const CellList = (): JSX.Element => {
   return (
     <ul>
       <li>
-        <InsertCell />
+        <InsertCell alwaysVisible={cells.length === 0} />
       </li>
       {cells.map(({ id }) => (
         <li key={id}>
