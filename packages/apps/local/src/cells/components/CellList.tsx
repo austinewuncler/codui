@@ -1,3 +1,4 @@
+import { CodeEditor } from '@codui/editor';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Resizable } from 're-resizable';
 import React from 'react';
@@ -47,7 +48,7 @@ const CellList = (): JSX.Element => {
                   enable={{ right: true }}
                   handleStyles={{ right: { cursor: 'ew-resize' } }}
                 >
-                  <div className="h-full" />
+                  <CodeEditor />
                 </Resizable>
                 <div className="flex-auto"></div>
               </Resizable>

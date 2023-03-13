@@ -1,0 +1,1 @@
+{ "extends": "@codui/tsconfig/react.json", "include": ["src"] }
