@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { CellList } from '~/cells/components';
+
 import { StoreProvider, ThemeProvider } from '../providers';
 import DarkModeToggle from './DarkModeToggle';
 import Logo from './Logo';
@@ -13,6 +15,11 @@ const App = (): JSX.Element => (
           <DarkModeToggle />
         </div>
       </header>
+      <main className="custom-scrollbar h-[calc(100vh-4rem)] overflow-auto">
+        <div className="container mx-auto py-6">
+          <CellList />
+        </div>
+      </main>
     </StoreProvider>
   </ThemeProvider>
 );
