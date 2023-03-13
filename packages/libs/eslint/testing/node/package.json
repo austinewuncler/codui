@@ -1,0 +1,16 @@
+{
+  "name": "@codui/eslint-config-testing-node",
+  "version": "0.0.0",
+  "packageManager": "yarn@3.4.1",
+  "main": ".eslintrc.js",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": "*",
+    "eslint": "*",
+    "eslint-plugin-jest": "*",
+    "eslint-plugin-jest-extended": "*",
+    "eslint-plugin-jest-formatting": "*"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^5.54.1"
+  }
+}
