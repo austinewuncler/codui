@@ -1,6 +1,9 @@
 {
   "extends": "@codui/tsconfig/react.json",
-  "compilerOptions": { "paths": { "~/*": ["./src/*"] } },
+  "compilerOptions": {
+    "paths": { "~/*": ["./src/*"] },
+    "types": ["vitest/globals"]
+  },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
