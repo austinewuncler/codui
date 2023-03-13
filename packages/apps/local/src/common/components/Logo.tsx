@@ -9,6 +9,7 @@ const Logo = (): JSX.Element => {
 
   return (
     <button
+      type="button"
       className="font-cursive text-5xl"
       onClick={() => dispatch(removeAllCells())}
     >
