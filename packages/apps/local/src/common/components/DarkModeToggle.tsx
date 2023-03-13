@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 
 import { useTheme } from '../providers';
@@ -10,13 +11,13 @@ const DarkModeToggle = (): JSX.Element => {
     <button
       type="button"
       title="dark mode toggle"
-      className="relative flex rounded-full bg-primary-light p-1 shadow-inner"
+      className="relative flex overflow-hidden rounded-full bg-primary-light p-1 shadow-inner transition-colors dark:bg-primary-dark"
       onClick={toggleDarkMode}
     >
-      <div className="p-1">
+      <div className="-translate-x-full -rotate-180 p-1 text-white opacity-0 transition-all dark:translate-x-0 dark:rotate-0 dark:opacity-100">
         <SunIcon className="h-4 w-4" />
       </div>
-      <div className="p-1">
+      <div className="translate-x-0 rotate-0 p-1 text-black opacity-100 transition-all dark:translate-x-full dark:rotate-180 dark:opacity-0">
         <MoonIcon className="h-4 w-4" />
       </div>
       <div
@@ -25,9 +26,12 @@ const DarkModeToggle = (): JSX.Element => {
           isDarkMode ? 'justify-end' : 'justify-start'
         }`}
       >
-        <div className="rounded-full bg-primary p-1 shadow">
+        <motion.div
+          layout
+          className="rounded-full bg-primary-dark p-1 shadow transition-colors dark:bg-primary-light"
+        >
           <div className="h-4 w-4" />
-        </div>
+        </motion.div>
       </div>
     </button>
   );

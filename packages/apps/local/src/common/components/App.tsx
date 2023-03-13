@@ -7,7 +7,7 @@ import Logo from './Logo';
 const App = (): JSX.Element => (
   <ThemeProvider>
     <StoreProvider>
-      <header className="sticky inset-x-0 top-0 bg-white">
+      <header className="sticky inset-x-0 top-0 bg-white transition-colors dark:bg-black">
         <div className="container mx-auto flex h-16 items-center justify-between">
           <Logo />
           <DarkModeToggle />
