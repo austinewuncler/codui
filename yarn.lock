@@ -535,6 +535,7 @@ __metadata:
     postcss: ^8.4.21
     prettier: ^2.8.4
     prettier-plugin-tailwindcss: ^0.2.4
+    re-resizable: ^6.9.9
     react: ^18.2.0
     react-dom: ^18.2.0
     react-redux: ^8.0.5
@@ -8771,6 +8772,16 @@ __metadata:
   version: 5.1.1
   resolution: "quick-lru@npm:5.1.1"
   checksum: a516faa25574be7947969883e6068dbe4aa19e8ef8e8e0fd96cddd6d36485e9106d85c0041a27153286b0770b381328f4072aa40d3b18a19f5f7d2b78b94b5ed
+  languageName: node
+  linkType: hard
+
+"re-resizable@npm:^6.9.9":
+  version: 6.9.9
+  resolution: "re-resizable@npm:6.9.9"
+  peerDependencies:
+    react: ^16.13.1 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0
+  checksum: a2c8bfe86646fb02d5c9c624b1da26f9e6a5e2f552cd96ce4db690588bee6b21177065ce8e98646c6ca0b1a9c4ce233824b75eb346800d8248ac8a87b40f1b28
   languageName: node
   linkType: hard
 
