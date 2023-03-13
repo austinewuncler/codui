@@ -1,31 +1,48 @@
 import { javascript } from '@codemirror/lang-javascript';
-import { EditorState } from '@codemirror/state';
+import { Compartment, EditorState } from '@codemirror/state';
 import { basicSetup, EditorView } from 'codemirror';
-import { type RefObject } from 'react';
-import { useEffectOnce } from 'usehooks-ts';
+import { type RefObject, useMemo, useRef, useState } from 'react';
+import { useEffectOnce, useUpdateEffect } from 'usehooks-ts';
 
-import { baseTheme } from '../themes';
+import { baseTheme, darkTheme, lightTheme } from '../themes';
 
 interface Props {
   ref: RefObject<HTMLDivElement>;
+  isDarkMode: boolean;
 }
 
-const useCodeEditor = ({ ref }: Props): void => {
+const useCodeEditor = ({ ref, isDarkMode }: Props): void => {
+  const [view, setView] = useState<EditorView>();
+  const hasSetView = useRef(false);
+  const themeConf = useMemo(() => new Compartment(), []);
+
   useEffectOnce(() => {
-    let view: EditorView;
-    if (ref.current != null) {
-      view = new EditorView({
+    if (!hasSetView.current && view === undefined && ref.current != null) {
+      const currentView = new EditorView({
         state: EditorState.create({
-          extensions: [basicSetup, javascript({ jsx: true }), baseTheme],
+          extensions: [
+            basicSetup,
+            javascript({ jsx: true }),
+            baseTheme,
+            themeConf.of(isDarkMode ? darkTheme : lightTheme),
+          ],
         }),
         parent: ref.current,
       });
+      setView(currentView);
+      hasSetView.current = true;
     }
 
     return () => {
-      view.destroy();
+      view?.destroy();
     };
   });
+
+  useUpdateEffect(() => {
+    if (isDarkMode)
+      view?.dispatch({ effects: themeConf.reconfigure(darkTheme) });
+    else view?.dispatch({ effects: themeConf.reconfigure(lightTheme) });
+  }, [isDarkMode]);
 };
 
 export default useCodeEditor;

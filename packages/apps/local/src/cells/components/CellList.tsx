@@ -1,6 +1,4 @@
-import { CodeEditor } from '@codui/editor';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Resizable } from 're-resizable';
 import React from 'react';
 
 import { JSIcon } from '~/common/components';
@@ -9,6 +7,7 @@ import { useTypedSelector } from '~/common/providers';
 import { selectCells } from '../reducer';
 import CellActions from './CellActions';
 import InsertCell from './InsertCell';
+import JSCell from './JSCell';
 
 const CellList = (): JSX.Element => {
   const cells = useTypedSelector(selectCells);
@@ -33,25 +32,7 @@ const CellList = (): JSX.Element => {
                 <JSIcon height={48} width={48} />
                 <CellActions cellId={id} />
               </header>
-              <Resizable
-                className="flex"
-                defaultSize={{ width: 'auto', height: 'auto' }}
-                minHeight={200}
-                enable={{ bottom: true }}
-                handleStyles={{ bottom: { cursor: 'ns-resize' } }}
-              >
-                <Resizable
-                  className="border-r border-slate-light dark:border-slate-dark"
-                  defaultSize={{ width: '50%', height: 'auto' }}
-                  minWidth="25%"
-                  maxWidth="75%"
-                  enable={{ right: true }}
-                  handleStyles={{ right: { cursor: 'ew-resize' } }}
-                >
-                  <CodeEditor />
-                </Resizable>
-                <div className="flex-auto"></div>
-              </Resizable>
+              <JSCell />
             </article>
             <InsertCell prevCellId={id} />
           </motion.li>
