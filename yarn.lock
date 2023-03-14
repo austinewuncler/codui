@@ -632,7 +632,7 @@ __metadata:
     "@testing-library/jest-dom": ^5.16.5
     "@testing-library/react": ^14.0.0
     "@testing-library/user-event": ^14.4.3
-    "@types/node": ^18.15.1
+    "@types/node": ^18.15.2
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@types/testing-library__jest-dom": ^5.14.5
@@ -665,7 +665,7 @@ __metadata:
     react: ^18.2.0
     react-dom: ^18.2.0
     react-redux: ^8.0.5
-    tailwind-scrollbar: ^2.1.0
+    tailwind-scrollbar: ^3.0.0
     tailwindcss: ^3.2.7
     tiny-invariant: ^1.3.1
     typescript: ^4.9.5
@@ -2197,10 +2197,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:^18.15.1":
+"@types/node@npm:*":
   version: 18.15.1
   resolution: "@types/node@npm:18.15.1"
   checksum: c63a40786919ef77c1dd26f60ffb1ed76c8b608fb156942e4d600d4536e06c19d09463a66cd76e6415f90cd281d7a1a4683e7cfd9a6f0927491853c56ffa17bf
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^18.15.2":
+  version: 18.15.2
+  resolution: "@types/node@npm:18.15.2"
+  checksum: 6db83062d295f9da63e7b24477f734b497170a577b21e0c13637d6f355d53713f875536e52ff02938221330d919700b5ed787dc493e32624a3ecb6c86105cfc8
   languageName: node
   linkType: hard
 
@@ -10049,12 +10056,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwind-scrollbar@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "tailwind-scrollbar@npm:2.1.0"
+"tailwind-scrollbar@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "tailwind-scrollbar@npm:3.0.0"
   peerDependencies:
     tailwindcss: 3.x
-  checksum: ef06182dc9316ccd58b446c7ca98296a53cc39a610b9eb2d641c7dd0d5b6e3366f6a126e5ca47ccb844f2665c28012a065a05f5a808e39a385d83a2f07c50da0
+  checksum: b5e406bcbf62ac25abe81dc6d708a1209c2b636918711e315542845022a9a3a68a0a135c3bb24ae00d07dad3f0725c6587b2fd0b0fb57d20fcc105cf40adb3ca
   languageName: node
   linkType: hard
 

@@ -48,7 +48,7 @@ const CellActions = ({ cellId }: Props): JSX.Element => {
           type="button"
           title={`${actionName}(${cellId})`}
           key={actionName}
-          className="grid h-10 w-10 place-content-center transition-transform hover:scale-110"
+          className="grid h-10 w-10 place-content-center transition-transform hover:scale-110 hover:drop-shadow-md"
           onClick={action}
         >
           {icon}

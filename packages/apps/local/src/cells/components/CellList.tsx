@@ -27,9 +27,9 @@ const CellList = (): JSX.Element => {
             exit={{ scale: 0, opacity: 0 }}
             className="flex flex-col gap-4"
           >
-            <article className="overflow-hidden rounded-r-lg rounded-b-lg shadow-md">
-              <header className="flex items-center justify-between bg-slate-light pr-4 dark:bg-slate-dark">
-                <JSIcon height={48} width={48} />
+            <article className="overflow-hidden rounded border border-neutral-light dark:border-neutral-dark">
+              <header className="flex h-12 items-center justify-between border-b border-neutral-light bg-neutral-lightest px-4 dark:border-neutral-dark dark:bg-neutral-darkest">
+                <JSIcon height={36} width={36} />
                 <CellActions cellId={id} />
               </header>
               <JSCell />

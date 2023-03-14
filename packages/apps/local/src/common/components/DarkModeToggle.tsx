@@ -28,7 +28,7 @@ const DarkModeToggle = (): JSX.Element => {
       >
         <motion.div
           layout
-          className="rounded-full bg-primary-dark p-1 shadow transition-colors dark:bg-primary-light"
+          className="rounded-full bg-primary p-1 shadow transition-colors"
         >
           <div className="h-4 w-4" />
         </motion.div>

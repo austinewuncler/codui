@@ -16,7 +16,7 @@ const JSCell = (): JSX.Element => {
       handleStyles={{ bottom: { cursor: 'ns-resize' } }}
     >
       <Resizable
-        className="border-r border-slate-light dark:border-slate-dark"
+        className="border-r border-neutral-light dark:border-neutral-dark"
         defaultSize={{ width: '50%', height: 'auto' }}
         minWidth="25%"
         maxWidth="75%"
