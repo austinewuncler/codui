@@ -10,13 +10,13 @@ const App = (): JSX.Element => (
   <ThemeProvider>
     <StoreProvider>
       <header className="sticky inset-x-0 top-0 bg-white transition-colors dark:bg-black">
-        <div className="container mx-auto flex h-16 items-center justify-between">
+        <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-0">
           <Logo />
           <DarkModeToggle />
         </div>
       </header>
       <main className="custom-scrollbar h-[calc(100vh-4rem)] overflow-auto">
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto px-4 py-6 sm:px-0">
           <CellList />
         </div>
       </main>
