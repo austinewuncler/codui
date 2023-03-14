@@ -13,6 +13,7 @@ import {
   type CellsState,
   type InsertCellPayload,
   type MoveCellPayload,
+  type UpdateCellContentPayload,
 } from './cells.types';
 
 const cellsAdapter = createEntityAdapter<Cell>();
@@ -51,6 +52,13 @@ const cellsSlice = createSlice({
         ids[destIndex] = cellId;
       }
     },
+    onUpdateCellContent: (
+      { data },
+      { payload }: PayloadAction<UpdateCellContentPayload>
+    ) => {
+      const { cellId, content } = payload;
+      cellsAdapter.updateOne(data, { id: cellId, changes: { code: content } });
+    },
     onRemoveCell: ({ data }, { payload }: PayloadAction<EntityId>) => {
       cellsAdapter.removeOne(data, payload);
     },
@@ -60,5 +68,10 @@ export default cellsSlice.reducer;
 export const { selectAll: selectCells } = cellsAdapter.getSelectors(
   ({ cells }: RootState) => cells.data
 );
-export const { onRemoveAllCells, onInsertCell, onMoveCell, onRemoveCell } =
-  cellsSlice.actions;
+export const {
+  onRemoveAllCells,
+  onInsertCell,
+  onMoveCell,
+  onUpdateCellContent,
+  onRemoveCell,
+} = cellsSlice.actions;

@@ -1,47 +1,43 @@
 import { javascript } from '@codemirror/lang-javascript';
-import { Compartment, EditorState } from '@codemirror/state';
-import { basicSetup, EditorView } from 'codemirror';
-import { type RefObject, useMemo, useRef, useState } from 'react';
-import { useEffectOnce, useUpdateEffect } from 'usehooks-ts';
+import { Compartment, type Extension } from '@codemirror/state';
+import { type RefObject, useEffect, useMemo } from 'react';
+import { useUpdateEffect } from 'usehooks-ts';
 
-import { baseTheme, darkTheme, lightTheme } from '../themes';
+import { darkTheme, lightTheme } from '../themes';
+import { type OnChange } from '../types';
+import { onUpdate } from '../utils';
+import useCodeMirror from './useCodeMirror';
 
 interface Props {
   ref: RefObject<HTMLDivElement>;
   isDarkMode: boolean;
+  onChange: OnChange;
+  value: string;
 }
 
-const useCodeEditor = ({ ref, isDarkMode }: Props): void => {
-  const [view, setView] = useState<EditorView>();
-  const hasSetView = useRef(false);
+const useCodeEditor = ({ ref, isDarkMode, onChange, value }: Props): void => {
   const themeConf = useMemo(() => new Compartment(), []);
+  const extensions: Extension[] = [
+    javascript({ jsx: true }),
+    themeConf.of(isDarkMode ? darkTheme : lightTheme),
+    onUpdate(onChange),
+  ];
+  const view = useCodeMirror(ref, extensions);
 
-  useEffectOnce(() => {
-    if (!hasSetView.current && view === undefined && ref.current != null) {
-      const currentView = new EditorView({
-        state: EditorState.create({
-          extensions: [
-            basicSetup,
-            javascript({ jsx: true }),
-            baseTheme,
-            themeConf.of(isDarkMode ? darkTheme : lightTheme),
-          ],
-        }),
-        parent: ref.current,
-      });
-      setView(currentView);
-      hasSetView.current = true;
+  useEffect(() => {
+    if (view != null) {
+      const editorValue = view.state.sliceDoc();
+
+      if (value !== editorValue)
+        view.dispatch({ changes: { from: 0, insert: value } });
     }
-
-    return () => {
-      view?.destroy();
-    };
-  });
+  }, [value, view]);
 
   useUpdateEffect(() => {
-    if (isDarkMode)
-      view?.dispatch({ effects: themeConf.reconfigure(darkTheme) });
-    else view?.dispatch({ effects: themeConf.reconfigure(lightTheme) });
+    if (view != null)
+      view.dispatch({
+        effects: themeConf.reconfigure(isDarkMode ? darkTheme : lightTheme),
+      });
   }, [isDarkMode]);
 };
 

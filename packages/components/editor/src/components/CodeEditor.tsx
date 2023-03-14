@@ -6,12 +6,18 @@ import { useCodeEditor } from '../hooks';
 
 interface Props {
   isDarkMode?: boolean;
+  onChange: (value: string) => void;
+  value: string;
 }
 
-const CodeEditor = ({ isDarkMode = false }: Props): JSX.Element => {
+const CodeEditor = ({
+  isDarkMode = false,
+  onChange,
+  value,
+}: Props): JSX.Element => {
   const ref = useRef<HTMLDivElement>(null);
 
-  useCodeEditor({ ref, isDarkMode });
+  useCodeEditor({ ref, isDarkMode, onChange, value });
 
   return <div ref={ref} style={{ height: '100%' }} />;
 };

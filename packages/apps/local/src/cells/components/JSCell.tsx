@@ -1,11 +1,26 @@
 import { CodeEditor } from '@codui/editor';
+import { type EntityId } from '@reduxjs/toolkit';
 import { Resizable } from 're-resizable';
-import React from 'react';
+import React, { useCallback } from 'react';
 
-import { useTheme } from '~/common/providers';
+import { useTheme, useTypedDispatch } from '~/common/providers';
 
-const JSCell = (): JSX.Element => {
+import { onUpdateCellContent } from '../reducer';
+
+interface Props {
+  cellId: EntityId;
+  code: string;
+}
+
+const JSCell = ({ cellId, code }: Props): JSX.Element => {
   const { isDarkMode } = useTheme();
+  const dispatch = useTypedDispatch();
+
+  const onChange = useCallback(
+    (value: string) =>
+      dispatch(onUpdateCellContent({ cellId, content: value })),
+    [cellId, dispatch]
+  );
 
   return (
     <Resizable
@@ -23,7 +38,7 @@ const JSCell = (): JSX.Element => {
         enable={{ right: true }}
         handleStyles={{ right: { cursor: 'ew-resize' } }}
       >
-        <CodeEditor isDarkMode={isDarkMode} />
+        <CodeEditor isDarkMode={isDarkMode} onChange={onChange} value={code} />
       </Resizable>
       <div className="flex-auto"></div>
     </Resizable>

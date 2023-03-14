@@ -24,3 +24,8 @@ export interface MoveCellPayload {
 }
 
 export type CellAction = 'moveCellUp' | 'moveCellDown' | 'removeCell';
+
+export interface UpdateCellContentPayload {
+  cellId: EntityId;
+  content: string;
+}

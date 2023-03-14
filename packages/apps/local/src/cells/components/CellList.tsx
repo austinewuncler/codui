@@ -18,7 +18,7 @@ const CellList = (): JSX.Element => {
         <InsertCell alwaysVisible={cells.length === 0} />
       </li>
       <AnimatePresence>
-        {cells.map(({ id }) => (
+        {cells.map(({ id, code }) => (
           <motion.li
             key={id}
             layout
@@ -32,7 +32,7 @@ const CellList = (): JSX.Element => {
                 <JSIcon height={36} width={36} />
                 <CellActions cellId={id} />
               </header>
-              <JSCell />
+              <JSCell cellId={id} code={code} />
             </article>
             <InsertCell prevCellId={id} />
           </motion.li>
