@@ -26,11 +26,11 @@ If you want to run the command directly without installing, you can use `npx` or
 
 ```bash
 # npm
-npx -p @codui/cli codument start [options] [workbook]
+npx -p @codui/cli codui start [options] [workbook]
 
 # yarn
 
-yarn dlx -p @codui/cli codument start [options] [workbook]
+yarn dlx -p @codui/cli codui start [options] [workbook]
 ```
 
 ### Arguments
